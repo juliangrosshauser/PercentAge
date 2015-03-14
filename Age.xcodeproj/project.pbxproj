@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B946B0DA1AB4A10100D0A599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D21AB4A10100D0A599 /* AppDelegate.swift */; };
-		B946B0DB1AB4A10100D0A599 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D41AB4A10100D0A599 /* ViewController.swift */; };
+		B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D41AB4A10100D0A599 /* AgeViewController.swift */; };
 		B946B0DC1AB4A10100D0A599 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D61AB4A10100D0A599 /* LaunchScreen.xib */; };
 		B946B0DD1AB4A10100D0A599 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D81AB4A10100D0A599 /* Images.xcassets */; };
 		B946B0E41AB4A10B00D0A599 /* AgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0E11AB4A10B00D0A599 /* AgeTests.swift */; };
@@ -28,7 +28,7 @@
 		B946B0AA1AB4A01300D0A599 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0BF1AB4A01300D0A599 /* AgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0D21AB4A10100D0A599 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B946B0D41AB4A10100D0A599 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B946B0D41AB4A10100D0A599 /* AgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
 		B946B0D71AB4A10100D0A599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B946B0D81AB4A10100D0A599 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B946B0D91AB4A10100D0A599 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		B946B0D31AB4A10100D0A599 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B946B0D41AB4A10100D0A599 /* ViewController.swift */,
+				B946B0D41AB4A10100D0A599 /* AgeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B946B0DB1AB4A10100D0A599 /* ViewController.swift in Sources */,
+				B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */,
 				B946B0DA1AB4A10100D0A599 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
