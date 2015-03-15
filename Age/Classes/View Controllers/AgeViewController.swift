@@ -10,8 +10,16 @@ import UIKit
 
 class AgeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let defaults = NSUserDefaults.standardUserDefaults()
+
+        if let birthday = defaults.objectForKey("birthday") as? NSDate {
+            NSLog("Birthday: %@", birthday);
+        } else {
+            self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
+        }
     }
 }
 
