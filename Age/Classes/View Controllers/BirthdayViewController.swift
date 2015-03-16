@@ -10,9 +10,13 @@ import UIKit
 
 class BirthdayViewController: UIViewController {
 
+    //MARK: Properties
+
     private var day: Int = 1
     private var month: Int = 1
     private var year: Int = 2015
+
+    //MARK: UIViewController
 
     override func loadView() {
         self.view = BirthdayView()
@@ -36,6 +40,8 @@ class BirthdayViewController: UIViewController {
 
         birthdayView.saveButton.addTarget(self, action: "saveBirthday", forControlEvents: UIControlEvents.TouchUpInside)
     }
+
+    //MARK: Button Actions
 
     @objc
     private func incrementDay() {
