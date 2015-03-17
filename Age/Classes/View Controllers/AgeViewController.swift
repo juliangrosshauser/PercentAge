@@ -17,9 +17,7 @@ class AgeViewController: UIViewController {
 
         let defaults = NSUserDefaults.standardUserDefaults()
 
-        if let birthday = defaults.objectForKey("birthday") as? NSDate {
-            NSLog("Birthday: %@", birthday);
-        } else {
+        if (defaults.objectForKey("birthday") == nil) {
             self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
         }
     }
