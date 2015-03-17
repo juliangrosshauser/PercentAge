@@ -119,8 +119,14 @@ class BirthdayViewController: UIViewController {
     private func saveBirthday() {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-mm-yyyy"
+
         let birthdayView = self.view as! BirthdayView
-        let birthday = dateFormatter.dateFromString("\(birthdayView.dayLabel.text!)-\(birthdayView.monthLabel.text!)-\(birthdayView.yearLabel.text!)")
+
+        let day = NSString(format: "%02d", birthdayView.dayLabel.text!.toInt()!)
+        let month = NSString(format: "%02d", birthdayView.monthLabel.text!.toInt()!)
+        let year = birthdayView.yearLabel.text!
+
+        let birthday = dateFormatter.dateFromString("\(day)-\(month)-\(year)")
 
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(birthday, forKey: "birthday")
