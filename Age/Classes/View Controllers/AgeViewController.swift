@@ -10,6 +10,10 @@ import UIKit
 
 class AgeViewController: UIViewController {
 
+    //MARK: Properties
+
+    var daysSinceBirthdayLabel = UILabel()
+
     //MARK: UIViewController
 
     override func viewDidAppear(animated: Bool) {
@@ -19,7 +23,21 @@ class AgeViewController: UIViewController {
 
         if (defaults.objectForKey("birthday") == nil) {
             self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
+        } else {
+            self.daysSinceBirthdayLabel.text = String(self.daysSinceBirthday())
+            self.daysSinceBirthdayLabel.sizeToFit()
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.daysSinceBirthdayLabel.center = self.view.center
+        self.daysSinceBirthdayLabel.textAlignment = NSTextAlignment.Center
+        self.daysSinceBirthdayLabel.layer.borderWidth = 1
+        self.daysSinceBirthdayLabel.layer.borderColor = UIColor.grayColor().CGColor
+        self.daysSinceBirthdayLabel.layer.cornerRadius = 5
+        self.view.addSubview(self.daysSinceBirthdayLabel)
     }
 
     //MARK: Date Calculations
