@@ -118,7 +118,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func saveBirthday() {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yyyy"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
 
         let birthdayView = self.view as! BirthdayView
 
