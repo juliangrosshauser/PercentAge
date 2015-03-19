@@ -42,6 +42,7 @@ class AgeViewController: UIViewController {
 
     //MARK: Date Calculations
 
+    // will return negative number if birthday already occured in current year
     func daysSinceBirthday() -> Int {
         let defaults = NSUserDefaults.standardUserDefaults()
 
@@ -63,7 +64,7 @@ class AgeViewController: UIViewController {
             let dayDifference = calendar!.components(NSCalendarUnit.CalendarUnitDay, fromDate: today, toDate: birthdayCurrentYear, options: nil)
 
             // if birthdayCurrentYear is before today dayDifference.day will return a negative number
-            return abs(dayDifference.day)
+            return dayDifference.day
         }
 
         return 0
