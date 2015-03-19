@@ -24,7 +24,7 @@ class AgeViewController: UIViewController {
         if (defaults.objectForKey("birthday") == nil) {
             self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
         } else {
-            self.daysSinceBirthdayLabel.text = String(self.daysSinceBirthday())
+            self.daysSinceBirthdayLabel.text = String(self.daysBetweenTodayAndBirthday())
             self.daysSinceBirthdayLabel.sizeToFit()
         }
     }
@@ -43,7 +43,7 @@ class AgeViewController: UIViewController {
     //MARK: Date Calculations
 
     // will return negative number if birthday already occured in current year
-    func daysSinceBirthday() -> Int {
+    func daysBetweenTodayAndBirthday() -> Int {
         let defaults = NSUserDefaults.standardUserDefaults()
 
         if let birthday = defaults.objectForKey("birthday") as? NSDate {
