@@ -24,15 +24,22 @@ class AgeViewController: UIViewController {
         if (defaults.objectForKey("birthday") == nil) {
             self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
         } else {
-            self.daysBetweenTodayAndBirthdayLabel.text = String(self.daysBetweenTodayAndBirthday())
+            let daysBetween = daysBetweenTodayAndBirthday()
+
+            if (daysBetween < 0) {
+                self.daysBetweenTodayAndBirthdayLabel.text = "\(abs(self.daysBetweenTodayAndBirthday())) days since your birthday"
+            } else {
+                self.daysBetweenTodayAndBirthdayLabel.text = "\(self.daysBetweenTodayAndBirthday()) days until your birthday"
+            }
+
             self.daysBetweenTodayAndBirthdayLabel.sizeToFit()
+            self.daysBetweenTodayAndBirthdayLabel.center = self.view.center
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.daysBetweenTodayAndBirthdayLabel.center = self.view.center
         self.daysBetweenTodayAndBirthdayLabel.textAlignment = NSTextAlignment.Center
         self.daysBetweenTodayAndBirthdayLabel.layer.borderWidth = 1
         self.daysBetweenTodayAndBirthdayLabel.layer.borderColor = UIColor.grayColor().CGColor
