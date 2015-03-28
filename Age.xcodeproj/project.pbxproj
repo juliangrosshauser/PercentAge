@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7449D66262990B4AB9C861CF /* Pods_AgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5988AFF4CBA606F3CD78F3C8 /* Pods_AgeTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B946B0DA1AB4A10100D0A599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D21AB4A10100D0A599 /* AppDelegate.swift */; };
 		B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D41AB4A10100D0A599 /* AgeViewController.swift */; };
 		B946B0DC1AB4A10100D0A599 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D61AB4A10100D0A599 /* LaunchScreen.xib */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		136B38BCFA6E57D6C6C29274 /* Pods-AgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests.release.xcconfig"; sourceTree = "<group>"; };
+		5988AFF4CBA606F3CD78F3C8 /* Pods_AgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BA41C716111D3837EB2254 /* Pods-AgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B946B0AA1AB4A01300D0A599 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0BF1AB4A01300D0A599 /* AgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0D21AB4A10100D0A599 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,18 +56,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7449D66262990B4AB9C861CF /* Pods_AgeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		631C12AC42CAA712EFCB8DF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75BA41C716111D3837EB2254 /* Pods-AgeTests.debug.xcconfig */,
+				136B38BCFA6E57D6C6C29274 /* Pods-AgeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B946B0A11AB4A01300D0A599 = {
 			isa = PBXGroup;
 			children = (
 				B946B0CF1AB4A10100D0A599 /* Age */,
 				B946B0DF1AB4A10B00D0A599 /* AgeTests */,
 				B946B0AB1AB4A01300D0A599 /* Products */,
+				631C12AC42CAA712EFCB8DF7 /* Pods */,
+				D146B013C28A2E567460661B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +172,14 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		D146B013C28A2E567460661B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5988AFF4CBA606F3CD78F3C8 /* Pods_AgeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B946B0CC1AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "AgeTests" */;
 			buildPhases = (
+				F53A3CCE2A3EE3752BF3D8E4 /* Check Pods Manifest.lock */,
 				B946B0BB1AB4A01300D0A599 /* Sources */,
 				B946B0BC1AB4A01300D0A599 /* Frameworks */,
 				B946B0BD1AB4A01300D0A599 /* Resources */,
+				27E24243DFEC51628AC1433D /* Embed Pods Frameworks */,
+				C0CEB94052CFAF42AD2B75CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +276,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27E24243DFEC51628AC1433D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0CEB94052CFAF42AD2B75CB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F53A3CCE2A3EE3752BF3D8E4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B946B0A61AB4A01300D0A599 /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		B946B0CD1AB4A01300D0A599 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75BA41C716111D3837EB2254 /* Pods-AgeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -416,6 +492,7 @@
 		};
 		B946B0CE1AB4A01300D0A599 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 136B38BCFA6E57D6C6C29274 /* Pods-AgeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
