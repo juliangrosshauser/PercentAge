@@ -12,7 +12,7 @@
 		B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D41AB4A10100D0A599 /* AgeViewController.swift */; };
 		B946B0DC1AB4A10100D0A599 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D61AB4A10100D0A599 /* LaunchScreen.xib */; };
 		B946B0DD1AB4A10100D0A599 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D81AB4A10100D0A599 /* Images.xcassets */; };
-		B946B0E41AB4A10B00D0A599 /* AgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0E11AB4A10B00D0A599 /* AgeTests.swift */; };
+		B946B0E41AB4A10B00D0A599 /* AgeViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0E11AB4A10B00D0A599 /* AgeViewControllerSpec.swift */; };
 		B946B1011AB4A94F00D0A599 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B1001AB4A94F00D0A599 /* BirthdayViewController.swift */; };
 		B9C7ED3D1AB7818700A78482 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C7ED3C1AB7818700A78482 /* BirthdayView.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 		B946B0D71AB4A10100D0A599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B946B0D81AB4A10100D0A599 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B946B0D91AB4A10100D0A599 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B946B0E11AB4A10B00D0A599 /* AgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeTests.swift; sourceTree = "<group>"; };
+		B946B0E11AB4A10B00D0A599 /* AgeViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewControllerSpec.swift; sourceTree = "<group>"; };
 		B946B0E31AB4A10B00D0A599 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B946B1001AB4A94F00D0A599 /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		B9C7ED3C1AB7818700A78482 /* BirthdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BirthdayView.swift; path = Age/Classes/Views/BirthdayView.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		B946B0E01AB4A10B00D0A599 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B946B0E11AB4A10B00D0A599 /* AgeTests.swift */,
+				B946B0E11AB4A10B00D0A599 /* AgeViewControllerSpec.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B946B0E41AB4A10B00D0A599 /* AgeTests.swift in Sources */,
+				B946B0E41AB4A10B00D0A599 /* AgeViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
