@@ -24,13 +24,9 @@ class AgeViewController: UIViewController {
         if (defaults.objectForKey("birthday") == nil) {
             self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
         } else {
-            let daysBetween = ageInPercent()
+            let age = ageInPercent()
 
-            if (daysBetween < 0) {
-                self.daysBetweenTodayAndBirthdayLabel.text = "\(abs(self.daysBetweenTodayAndBirthday())) days since your birthday"
-            } else {
-                self.daysBetweenTodayAndBirthdayLabel.text = "\(self.daysBetweenTodayAndBirthday()) days until your birthday"
-            }
+            self.daysBetweenTodayAndBirthdayLabel.text = NSString(format: "%.2f", age) as String
 
             self.daysBetweenTodayAndBirthdayLabel.sizeToFit()
             self.daysBetweenTodayAndBirthdayLabel.center = self.view.center
