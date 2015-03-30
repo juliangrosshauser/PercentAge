@@ -12,7 +12,7 @@ class AgeViewController: UIViewController {
 
     //MARK: Properties
 
-    var daysBetweenTodayAndBirthdayLabel = UILabel()
+    var ageLabel = UILabel()
 
     //MARK: UIViewController
 
@@ -26,21 +26,21 @@ class AgeViewController: UIViewController {
         } else {
             let age = ageInPercent()
 
-            self.daysBetweenTodayAndBirthdayLabel.text = NSString(format: "%.2f", age) as String
+            self.ageLabel.text = NSString(format: "%.2f", age) as String
 
-            self.daysBetweenTodayAndBirthdayLabel.sizeToFit()
-            self.daysBetweenTodayAndBirthdayLabel.center = self.view.center
+            self.ageLabel.sizeToFit()
+            self.ageLabel.center = self.view.center
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.daysBetweenTodayAndBirthdayLabel.textAlignment = NSTextAlignment.Center
-        self.daysBetweenTodayAndBirthdayLabel.layer.borderWidth = 1
-        self.daysBetweenTodayAndBirthdayLabel.layer.borderColor = UIColor.grayColor().CGColor
-        self.daysBetweenTodayAndBirthdayLabel.layer.cornerRadius = 5
-        self.view.addSubview(self.daysBetweenTodayAndBirthdayLabel)
+        self.ageLabel.textAlignment = NSTextAlignment.Center
+        self.ageLabel.layer.borderWidth = 1
+        self.ageLabel.layer.borderColor = UIColor.grayColor().CGColor
+        self.ageLabel.layer.cornerRadius = 5
+        self.view.addSubview(self.ageLabel)
     }
 
     //MARK: Date Calculations
