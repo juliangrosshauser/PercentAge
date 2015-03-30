@@ -45,7 +45,6 @@ class AgeViewController: UIViewController {
 
     //MARK: Date Calculations
 
-    // will return negative number if birthday already occured in current year
     func ageInPercent() -> Float {
         let defaults = NSUserDefaults.standardUserDefaults()
 
