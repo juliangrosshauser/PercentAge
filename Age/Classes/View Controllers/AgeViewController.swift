@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgeViewController: UIViewController {
+public class AgeViewController: UIViewController {
 
     //MARK: Properties
 
@@ -16,7 +16,7 @@ class AgeViewController: UIViewController {
 
     //MARK: UIViewController
 
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -33,7 +33,7 @@ class AgeViewController: UIViewController {
         }
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         self.ageLabel.textAlignment = NSTextAlignment.Center
@@ -46,7 +46,7 @@ class AgeViewController: UIViewController {
     //MARK: Date Calculations
 
         let defaults = NSUserDefaults.standardUserDefaults()
-    func ageInPercent(#birthday: NSDate, today: NSDate) -> Float {
+    public func ageInPercent(#birthday: NSDate, today: NSDate) -> Float {
 
         if let birthday = defaults.objectForKey("birthday") as? NSDate {
             let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
