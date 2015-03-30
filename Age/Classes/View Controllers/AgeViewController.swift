@@ -21,15 +21,15 @@ class AgeViewController: UIViewController {
 
         let defaults = NSUserDefaults.standardUserDefaults()
 
-        if (defaults.objectForKey("birthday") == nil) {
-            self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
-        } else {
-            let age = ageInPercent()
+        if let birthday = defaults.objectForKey("birthday") as? NSDate {
+            let age = ageInPercent(birthday: birthday, today: NSDate())
 
             self.ageLabel.text = NSString(format: "%.2f", age) as String
 
             self.ageLabel.sizeToFit()
             self.ageLabel.center = self.view.center
+        } else {
+            self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
         }
     }
 
@@ -45,8 +45,8 @@ class AgeViewController: UIViewController {
 
     //MARK: Date Calculations
 
-    func ageInPercent() -> Float {
         let defaults = NSUserDefaults.standardUserDefaults()
+    func ageInPercent(#birthday: NSDate, today: NSDate) -> Float {
 
         if let birthday = defaults.objectForKey("birthday") as? NSDate {
             let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
