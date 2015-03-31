@@ -45,31 +45,28 @@ public class AgeViewController: UIViewController {
 
     //MARK: Date Calculations
 
-        let defaults = NSUserDefaults.standardUserDefaults()
     public func ageInPercent(#birthday: NSDate, today: NSDate) -> Float {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
 
-        if let birthday = defaults.objectForKey("birthday") as? NSDate {
-            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-            let today = NSDate()
+        let currentYear = calendar!.component(NSCalendarUnit.CalendarUnitYear, fromDate: today)
+        let birthdayDay = calendar!.component(NSCalendarUnit.CalendarUnitDay, fromDate: birthday)
+        let birthdayMonth = calendar!.component(NSCalendarUnit.CalendarUnitMonth, fromDate: birthday)
 
-            let currentYear = calendar!.component(NSCalendarUnit.CalendarUnitYear, fromDate: today)
-            let birthdayDay = calendar!.component(NSCalendarUnit.CalendarUnitDay, fromDate: birthday)
-            let birthdayMonth = calendar!.component(NSCalendarUnit.CalendarUnitMonth, fromDate: birthday)
+        let birthdayCurrentYearComponents = NSDateComponents()
+        birthdayCurrentYearComponents.day = birthdayDay
+        birthdayCurrentYearComponents.month = birthdayMonth
+        birthdayCurrentYearComponents.year = currentYear
 
-            let birthdayCurrentYearComponents = NSDateComponents()
-            birthdayCurrentYearComponents.day = birthdayDay
-            birthdayCurrentYearComponents.month = birthdayMonth
-            birthdayCurrentYearComponents.year = currentYear
+        let birthdayCurrentYear = calendar!.dateFromComponents(birthdayCurrentYearComponents)!
 
-            let birthdayCurrentYear = calendar!.dateFromComponents(birthdayCurrentYearComponents)!
+        var ageInPercent: Float!
 
-            let dayDifference = calendar!.components(NSCalendarUnit.CalendarUnitDay, fromDate: today, toDate: birthdayCurrentYear, options: nil)
-
-            // if birthdayCurrentYear is before today dayDifference.day will return a negative number
-            return dayDifference.day
+        if (calendar!.isDate(birthdayCurrentYear, inSameDayAsDate: birthdayCurrentYear)) {
+            let yearDifferenceComponent = calendar?.components(NSCalendarUnit.CalendarUnitYear, fromDate: birthday, toDate: today, options: NSCalendarOptions.allZeros)
+            ageInPercent = Float(yearDifferenceComponent!.year)
         }
 
-        return 0
+        return ageInPercent
     }
 }
 
