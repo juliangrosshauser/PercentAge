@@ -43,6 +43,34 @@ class AgeViewControllerSpec: QuickSpec {
                         expect(ageInPercentRoundedString).to(equal("24.00"))
                     }
                 }
+
+                context("when birthday hasn't happened this year yet") {
+                    beforeEach {
+                        // difference of 31 days
+                        birthday = dateFormatter.dateFromString("06-03-1991")
+                        today = dateFormatter.dateFromString("03-02-2015")
+                    }
+
+                    it("returns correct age in percent") {
+                        let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
+                        let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
+                        expect(ageInPercentRoundedString).to(equal("23.92"))
+                    }
+                }
+
+                context("when birthday has happened this year already") {
+                    beforeEach {
+                        // difference of 31 days
+                        birthday = dateFormatter.dateFromString("06-03-1991")
+                        today = dateFormatter.dateFromString("06-04-2015")
+                    }
+
+                    it("returns correct age in percent") {
+                        let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
+                        let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
+                        expect(ageInPercentRoundedString).to(equal("24.09"))
+                    }
+                }
             }
         }
     }
