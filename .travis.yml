@@ -4,3 +4,5 @@ xcode_scheme: Age
 xcode_sdk: iphonesimulator8.1
 before_install:
   - gem update
+  - brew update
+  - brew upgrade
