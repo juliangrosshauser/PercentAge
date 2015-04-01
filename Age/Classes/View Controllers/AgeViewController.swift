@@ -61,7 +61,7 @@ public class AgeViewController: UIViewController {
 
         var ageInPercent: Float!
 
-        if (calendar!.isDate(birthdayCurrentYear, inSameDayAsDate: birthdayCurrentYear)) {
+        if (calendar!.isDate(birthdayCurrentYear, inSameDayAsDate: today)) {
             let yearDifferenceComponent = calendar?.components(NSCalendarUnit.CalendarUnitYear, fromDate: birthday, toDate: today, options: NSCalendarOptions.allZeros)
             ageInPercent = Float(yearDifferenceComponent!.year)
         }
