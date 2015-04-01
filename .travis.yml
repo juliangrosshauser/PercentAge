@@ -1,4 +1,4 @@
-language: swift
+language: objective-c
 xcode_workspace: Age.xcworkspace
 xcode_scheme: Age
 xcode_sdk: iphonesimulator8.1
