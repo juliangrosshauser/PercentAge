@@ -41,6 +41,12 @@ public class AgeViewController: UIViewController {
         self.ageLabel.layer.borderColor = UIColor.grayColor().CGColor
         self.ageLabel.layer.cornerRadius = 5
         self.view.addSubview(self.ageLabel)
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(origin: CGPointZero, size: self.view.bounds.size)
+        let gradientColors = [UIColor(red:0.24, green:0.49, blue:0.82, alpha:1).CGColor, UIColor(red:0.14, green:0.82, blue:0.99, alpha:1).CGColor]
+        gradientLayer.colors = gradientColors
+        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
     //MARK: Date Calculations
