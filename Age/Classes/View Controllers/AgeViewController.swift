@@ -65,12 +65,47 @@ public class AgeViewController: UIViewController {
 
         let birthdayCurrentYear = calendar!.dateFromComponents(birthdayCurrentYearComponents)!
 
-        var ageInPercent: Float!
+        let yearDifferenceComponent = calendar?.components(NSCalendarUnit.CalendarUnitYear, fromDate: birthday, toDate: today, options: NSCalendarOptions.allZeros)
+        let years = yearDifferenceComponent!.year
 
         if (calendar!.isDate(birthdayCurrentYear, inSameDayAsDate: today)) {
-            let yearDifferenceComponent = calendar?.components(NSCalendarUnit.CalendarUnitYear, fromDate: birthday, toDate: today, options: NSCalendarOptions.allZeros)
-            ageInPercent = Float(yearDifferenceComponent!.year)
+            return Float(years)
         }
+
+        let dayDifference = self.dayDifference(before: birthdayCurrentYear, after: today)
+
+        var percent: Float!
+
+        // dayDifference is negative if birthdayCurrentYear is after today
+        if (dayDifference < 0) {
+            let birthdayLastYearComponents = NSDateComponents()
+            birthdayLastYearComponents.day = birthdayDay
+            birthdayLastYearComponents.month = birthdayMonth
+            birthdayLastYearComponents.year = currentYear - 1
+
+            let birthdayLastYear = calendar!.dateFromComponents(birthdayLastYearComponents)!
+
+            let daysBetweenBirthdays = self.dayDifference(before: birthdayLastYear, after: birthdayCurrentYear)
+            let daysSinceBirthday = self.dayDifference(before: birthdayLastYear, after: today)
+
+            let onePercent = Float(daysBetweenBirthdays) / Float(100);
+            percent = Float(daysSinceBirthday) / onePercent / 100;
+        } else {
+            let birthdayNextYearComponents = NSDateComponents()
+            birthdayNextYearComponents.day = birthdayDay
+            birthdayNextYearComponents.month = birthdayMonth
+            birthdayNextYearComponents.year = currentYear + 1
+
+            let birthdayNextYear = calendar!.dateFromComponents(birthdayNextYearComponents)!
+
+            let daysBetweenBirthdays = self.dayDifference(before: birthdayCurrentYear, after: birthdayNextYear)
+            let daysSinceBirthday = self.dayDifference(before: birthdayCurrentYear, after: today)
+
+            let onePercent = Float(daysBetweenBirthdays) / Float(100);
+            percent = Float(daysSinceBirthday) / onePercent / 100;
+        }
+
+        let ageInPercent = Float(years) + percent
 
         return ageInPercent
     }
