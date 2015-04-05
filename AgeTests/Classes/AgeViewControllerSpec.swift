@@ -27,6 +27,8 @@ class AgeViewControllerSpec: QuickSpec {
                 ageViewController = AgeViewController()
             }
 
+            //MARK: ageInPercent
+
             describe("ageInPercent") {
                 var birthday: NSDate!
                 var today: NSDate!
@@ -72,6 +74,8 @@ class AgeViewControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            //MARK: dayDifference
 
             describe("dayDifference") {
                 var before: NSDate!
