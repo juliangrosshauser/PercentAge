@@ -72,6 +72,107 @@ class AgeViewControllerSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("dayDifference") {
+                var before: NSDate!
+                var after: NSDate!
+
+                context("dates are in same year") {
+                    context("dates are in same month") {
+                        context("dates are on same day") {
+                            it("returns correct number of days") {
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("06-03-1991")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(0))
+                            }
+                        }
+
+                        context("dates are on different days") {
+                            it("returns correct number of days") {
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("27-03-1991")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(21))
+                            }
+                        }
+                    }
+
+                    context("dates are in different months") {
+                        context("dates are on same day") {
+                            it("returns correct number of days") {
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("06-05-1991")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(61))
+                            }
+                        }
+
+                        context("dates are on different days") {
+                            it("returns correct number of days") {
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("18-04-1991")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(43))
+                            }
+                        }
+                    }
+                }
+
+                context("dates are in different years") {
+                    context("dates are in same month") {
+                        context("dates are on same day") {
+                            it("returns correct number of days") {
+                                // 1992 is a leap year
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("06-03-1993")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(731))
+                            }
+                        }
+
+                        context("dates are on different days") {
+                            it("returns correct number of days") {
+                                // 1992 is a leap year
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("11-03-1993")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(736))
+                            }
+                        }
+                    }
+
+                    context("dates are in different months") {
+                        context("dates are on same day") {
+                            it("returns correct number of days") {
+                                // 1992 is a leap year
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("06-04-1993")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(762))
+                            }
+                        }
+
+                        context("dates are on different days") {
+                            it("returns correct number of days") {
+                                // 1992 is a leap year
+                                before = dateFormatter.dateFromString("06-03-1991")
+                                after = dateFormatter.dateFromString("14-05-1993")
+
+                                let days = ageViewController.dayDifference(before: before, after: after)
+                                expect(days).to(equal(800))
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
