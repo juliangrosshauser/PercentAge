@@ -74,5 +74,12 @@ public class AgeViewController: UIViewController {
 
         return ageInPercent
     }
+
+    public func dayDifference(#before: NSDate, after: NSDate) -> Int {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let dayDifference = calendar!.components(NSCalendarUnit.CalendarUnitDay, fromDate: before, toDate: after, options: NSCalendarOptions.allZeros)
+
+        return dayDifference.day
+    }
 }
 
