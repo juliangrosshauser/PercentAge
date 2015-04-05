@@ -70,7 +70,7 @@ class AgeViewControllerSpec: QuickSpec {
                     it("returns correct age in percent") {
                         let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
                         let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
-                        expect(ageInPercentRoundedString).to(equal("24.09"))
+                        expect(ageInPercentRoundedString).to(equal("24.08"))
                     }
                 }
             }
