@@ -13,14 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK: Properties
 
-    var window: UIWindow?
+    lazy var window: UIWindow? = {
+        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window.backgroundColor = UIColor.whiteColor()
+        window.rootViewController = UINavigationController(rootViewController: AgeViewController())
+
+        return window
+    }()
 
     //MARK: UIApplicationDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.backgroundColor = UIColor.whiteColor()
-        self.window?.rootViewController = UINavigationController(rootViewController: AgeViewController())
         self.window?.makeKeyAndVisible()
 
         return true
