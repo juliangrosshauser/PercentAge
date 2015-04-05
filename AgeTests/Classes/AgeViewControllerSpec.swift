@@ -176,6 +176,16 @@ class AgeViewControllerSpec: QuickSpec {
                         }
                     }
                 }
+
+                context("before and after dates are switched") {
+                    it("returns negative number of days") {
+                        before = dateFormatter.dateFromString("06-03-1991")
+                        after = dateFormatter.dateFromString("07-03-1991")
+
+                        let days = ageViewController.dayDifference(before: after, after: before)
+                        expect(days).to(equal(-1))
+                    }
+                }
             }
         }
     }
