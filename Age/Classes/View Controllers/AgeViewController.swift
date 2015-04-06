@@ -37,6 +37,9 @@ public class AgeViewController: UIViewController {
         super.viewDidLoad()
 
         self.ageLabel.textAlignment = NSTextAlignment.Center
+        self.ageLabel.font = UIFont(name: "Avenir Next", size: 36)
+        self.ageLabel.textColor = UIColor.whiteColor()
+
         self.view.addSubview(self.ageLabel)
 
         let gradientLayer = CAGradientLayer()
