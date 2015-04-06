@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         UINavigationBar.appearance().shadowImage = UIImage()
 
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
         self.window?.makeKeyAndVisible()
 
         return true
