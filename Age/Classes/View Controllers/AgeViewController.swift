@@ -36,6 +36,9 @@ public class AgeViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: UIBarButtonItemStyle.Plain, target: self, action: "showBirthdaySettings:")
+        self.navigationItem.leftBarButtonItem = calendarButton
+
         self.ageLabel.textAlignment = NSTextAlignment.Center
         self.ageLabel.font = UIFont(name: "Avenir Next", size: 36)
         self.ageLabel.textColor = UIColor.whiteColor()
@@ -47,6 +50,12 @@ public class AgeViewController: UIViewController {
         let gradientColors = [UIColor(red:0.24, green:0.49, blue:0.82, alpha:1).CGColor, UIColor(red:0.14, green:0.82, blue:0.99, alpha:1).CGColor]
         gradientLayer.colors = gradientColors
         self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+
+    //MARK: Settings
+
+    func showBirthdaySettings(sender: AnyObject) {
+        self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
     }
 
     //MARK: Date Calculations
