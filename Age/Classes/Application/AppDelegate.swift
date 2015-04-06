@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: UIApplicationDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // make UINavigationBar transparent
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+
         self.window?.makeKeyAndVisible()
 
         return true
