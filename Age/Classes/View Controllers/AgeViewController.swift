@@ -37,9 +37,6 @@ public class AgeViewController: UIViewController {
         super.viewDidLoad()
 
         self.ageLabel.textAlignment = NSTextAlignment.Center
-        self.ageLabel.layer.borderWidth = 1
-        self.ageLabel.layer.borderColor = UIColor.grayColor().CGColor
-        self.ageLabel.layer.cornerRadius = 5
         self.view.addSubview(self.ageLabel)
 
         let gradientLayer = CAGradientLayer()
