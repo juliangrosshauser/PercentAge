@@ -55,7 +55,8 @@ public class AgeViewController: UIViewController {
 
     //MARK: Settings
 
-    func showBirthdaySettings(sender: AnyObject) {
+    @objc
+    private func showBirthdaySettings(sender: AnyObject) {
         self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
     }
 }
