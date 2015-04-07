@@ -1,6 +1,6 @@
 //
-//  AgeTests.swift
-//  AgeViewControllerSpec
+//  AgeViewModelSpec.swift
+//  AgeTests
 //
 //  Created by Julian Grosshauser on 14/03/15.
 //  Copyright (c) 2015 Julian Grosshauser. All rights reserved.
@@ -10,7 +10,7 @@ import Quick
 import Nimble
 import Age
 
-class AgeViewControllerSpec: QuickSpec {
+class AgeViewModelSpec: QuickSpec {
 
     override func spec() {
         var dateFormatter: NSDateFormatter!
@@ -20,11 +20,11 @@ class AgeViewControllerSpec: QuickSpec {
             dateFormatter.dateFormat = "dd-MM-yyyy"
         }
 
-        describe("AgeViewController") {
-            var ageViewController: AgeViewController!
+        describe("ageViewModel") {
+            var ageViewModel: AgeViewModel!
 
             beforeEach {
-                ageViewController = AgeViewController()
+                ageViewModel = AgeViewModel()
             }
 
             //MARK: ageInPercent
@@ -40,7 +40,7 @@ class AgeViewControllerSpec: QuickSpec {
                     }
                     
                     it("returns whole number") {
-                        let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
+                        let ageInPercent = ageViewModel.ageInPercent(birthday: birthday, today: today)
                         let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
                         expect(ageInPercentRoundedString).to(equal("24.00"))
                     }
@@ -54,7 +54,7 @@ class AgeViewControllerSpec: QuickSpec {
                     }
 
                     it("returns correct age in percent") {
-                        let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
+                        let ageInPercent = ageViewModel.ageInPercent(birthday: birthday, today: today)
                         let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
                         expect(ageInPercentRoundedString).to(equal("23.92"))
                     }
@@ -68,7 +68,7 @@ class AgeViewControllerSpec: QuickSpec {
                     }
 
                     it("returns correct age in percent") {
-                        let ageInPercent = ageViewController.ageInPercent(birthday: birthday, today: today)
+                        let ageInPercent = ageViewModel.ageInPercent(birthday: birthday, today: today)
                         let ageInPercentRoundedString = NSString(format: "%.2f", ageInPercent)
                         expect(ageInPercentRoundedString).to(equal("24.08"))
                     }
@@ -88,7 +88,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("06-03-1991")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(0))
                             }
                         }
@@ -98,7 +98,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("27-03-1991")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(21))
                             }
                         }
@@ -110,7 +110,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("06-05-1991")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(61))
                             }
                         }
@@ -120,7 +120,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("18-04-1991")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(43))
                             }
                         }
@@ -135,7 +135,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("06-03-1993")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(731))
                             }
                         }
@@ -146,7 +146,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("11-03-1993")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(736))
                             }
                         }
@@ -159,7 +159,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("06-04-1993")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(762))
                             }
                         }
@@ -170,7 +170,7 @@ class AgeViewControllerSpec: QuickSpec {
                                 before = dateFormatter.dateFromString("06-03-1991")
                                 after = dateFormatter.dateFromString("14-05-1993")
 
-                                let days = ageViewController.dayDifference(before: before, after: after)
+                                let days = ageViewModel.dayDifference(before: before, after: after)
                                 expect(days).to(equal(800))
                             }
                         }
@@ -182,7 +182,7 @@ class AgeViewControllerSpec: QuickSpec {
                         before = dateFormatter.dateFromString("06-03-1991")
                         after = dateFormatter.dateFromString("07-03-1991")
 
-                        let days = ageViewController.dayDifference(before: after, after: before)
+                        let days = ageViewModel.dayDifference(before: after, after: before)
                         expect(days).to(equal(-1))
                     }
                 }
