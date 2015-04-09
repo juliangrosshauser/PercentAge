@@ -14,6 +14,7 @@
 		B946B0DD1AB4A10100D0A599 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D81AB4A10100D0A599 /* Images.xcassets */; };
 		B946B0E41AB4A10B00D0A599 /* AgeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0E11AB4A10B00D0A599 /* AgeViewModelSpec.swift */; };
 		B946B1011AB4A94F00D0A599 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B1001AB4A94F00D0A599 /* BirthdayViewController.swift */; };
+		B9A7FD081AD7241800F59607 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A7FD071AD7241800F59607 /* BirthdayViewModel.swift */; };
 		B9B827891AD476BE0083974B /* AgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B827881AD476BE0083974B /* AgeViewModel.swift */; };
 		B9C7ED3D1AB7818700A78482 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C7ED3C1AB7818700A78482 /* BirthdayView.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		B946B0E11AB4A10B00D0A599 /* AgeViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewModelSpec.swift; sourceTree = "<group>"; };
 		B946B0E31AB4A10B00D0A599 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B946B1001AB4A94F00D0A599 /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		B9A7FD071AD7241800F59607 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BirthdayViewModel.swift; path = "Age/Classes/View Models/BirthdayViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		B9B827881AD476BE0083974B /* AgeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgeViewModel.swift; path = "Age/Classes/View Models/AgeViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		B9C7ED3C1AB7818700A78482 /* BirthdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BirthdayView.swift; path = Age/Classes/Views/BirthdayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B9B827881AD476BE0083974B /* AgeViewModel.swift */,
+				B9A7FD071AD7241800F59607 /* BirthdayViewModel.swift */,
 			);
 			name = "View Models";
 			path = "View Controllers";
@@ -345,6 +348,7 @@
 				B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */,
 				B946B0DA1AB4A10100D0A599 /* AppDelegate.swift in Sources */,
 				B946B1011AB4A94F00D0A599 /* BirthdayViewController.swift in Sources */,
+				B9A7FD081AD7241800F59607 /* BirthdayViewModel.swift in Sources */,
 				B9B827891AD476BE0083974B /* AgeViewModel.swift in Sources */,
 				B9C7ED3D1AB7818700A78482 /* BirthdayView.swift in Sources */,
 			);
