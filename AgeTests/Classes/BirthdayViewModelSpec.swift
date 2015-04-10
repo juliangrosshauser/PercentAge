@@ -85,6 +85,42 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("incrementYear") {
+                context("year value is at bottom limit") {
+                    it("increments year value") {
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 1900)
+                        birthdayViewModel.incrementYear()
+                        expect(birthdayViewModel.year).to(equal(1901))
+                    }
+                }
+
+                context("year value is at upper limit") {
+                    it("sets year value to bottom limit") {
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
+                        birthdayViewModel.incrementYear()
+                        expect(birthdayViewModel.year).to(equal(1900))
+                    }
+                }
+            }
+
+            describe("decrementYear") {
+                context("year value is at bottom limit") {
+                    it("sets year value to upper limit") {
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 1900)
+                        birthdayViewModel.decrementYear()
+                        expect(birthdayViewModel.year).to(equal(2015))
+                    }
+                }
+
+                context("year value is at upper limit") {
+                    it("decrements year value") {
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
+                        birthdayViewModel.decrementYear()
+                        expect(birthdayViewModel.year).to(equal(2014))
+                    }
+                }
+            }
         }
     }
 }
