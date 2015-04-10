@@ -121,6 +121,36 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("saveBirthday") {
+                var defaults: NSUserDefaults!
+
+                beforeEach {
+                    defaults = NSUserDefaults.standardUserDefaults()
+
+                    // make sure the key birthday isn't set in the user defaults
+                    if let birthday = defaults.objectForKey("birthday") as? NSDate {
+                        defaults.removeObjectForKey("birthday")
+                    }
+                }
+
+                afterEach {
+                    if let birthday = defaults.objectForKey("birthday") as? NSDate {
+                        defaults.removeObjectForKey("birthday")
+                    }
+                }
+
+                it("saves birthday into user defaults") {
+                    expect(defaults.objectForKey("birthday")).to(beNil())
+
+                    let birthdayViewModel = BirthdayViewModel()
+                    birthdayViewModel.saveBirthday()
+
+                    expect(defaults.objectForKey("birthday")).toNot(beNil())
+                }
+
+
+            }
         }
     }
 }
