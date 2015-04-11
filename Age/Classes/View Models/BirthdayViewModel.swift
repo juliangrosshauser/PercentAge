@@ -78,7 +78,7 @@ public class BirthdayViewModel {
         }
     }
 
-    public func saveBirthday() {
+    public func saveBirthdayIntoUserDefaults(userDefaults: NSUserDefaults) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
 
@@ -87,7 +87,6 @@ public class BirthdayViewModel {
 
         let birthday = dateFormatter.dateFromString("\(day)-\(month)-\(self.year)")
 
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(birthday, forKey: "birthday")
+        userDefaults.setObject(birthday, forKey: "birthday")
     }
 }

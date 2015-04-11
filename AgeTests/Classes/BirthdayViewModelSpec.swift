@@ -123,33 +123,27 @@ class BirthdayViewModelSpec: QuickSpec {
             }
 
             describe("saveBirthday") {
-                var defaults: NSUserDefaults!
+                var userDefaults: NSUserDefaults!
 
                 beforeEach {
-                    defaults = NSUserDefaults.standardUserDefaults()
-
-                    // make sure the key birthday isn't set in the user defaults
-                    if let birthday = defaults.objectForKey("birthday") as? NSDate {
-                        defaults.removeObjectForKey("birthday")
-                    }
+                    userDefaults = NSUserDefaults()
                 }
 
                 afterEach {
-                    if let birthday = defaults.objectForKey("birthday") as? NSDate {
-                        defaults.removeObjectForKey("birthday")
+                    // clear user defaults
+                    if let domainName = NSBundle.mainBundle().bundleIdentifier {
+                        userDefaults.removePersistentDomainForName(domainName)
                     }
                 }
 
                 it("saves birthday into user defaults") {
-                    expect(defaults.objectForKey("birthday")).to(beNil())
+                    expect(userDefaults.objectForKey("birthday")).to(beNil())
 
                     let birthdayViewModel = BirthdayViewModel()
-                    birthdayViewModel.saveBirthday()
+                    birthdayViewModel.saveBirthdayIntoUserDefaults(userDefaults)
 
-                    expect(defaults.objectForKey("birthday")).toNot(beNil())
+                    expect(userDefaults.objectForKey("birthday")).toNot(beNil())
                 }
-
-
             }
         }
     }
