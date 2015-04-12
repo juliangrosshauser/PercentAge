@@ -29,7 +29,8 @@ public class BirthdayViewModel {
     }
 
     //MARK: Button Actions
-    
+
+    @objc
     public func incrementDay() {
         if (self.day == 31) {
             self.day = 1
@@ -37,7 +38,8 @@ public class BirthdayViewModel {
             self.day++
         }
     }
-    
+
+    @objc
     public func decrementDay() {
         if (self.day == 1) {
             self.day = 31
@@ -45,7 +47,8 @@ public class BirthdayViewModel {
             self.day--
         }
     }
-    
+
+    @objc
     public func incrementMonth() {
         if (self.month == 12) {
             self.month = 1
@@ -53,7 +56,8 @@ public class BirthdayViewModel {
             self.month++
         }
     }
-    
+
+    @objc
     public func decrementMonth() {
         if (self.month == 1) {
             self.month = 12
@@ -61,7 +65,8 @@ public class BirthdayViewModel {
             self.month--
         }
     }
-    
+
+    @objc
     public func incrementYear() {
         if (self.year == 2015) {
             self.year = 1900
@@ -69,7 +74,8 @@ public class BirthdayViewModel {
             self.year++
         }
     }
-    
+
+    @objc
     public func decrementYear() {
         if (self.year == 1900) {
             self.year = 2015
@@ -78,6 +84,7 @@ public class BirthdayViewModel {
         }
     }
 
+    @objc
     public func saveBirthdayIntoUserDefaults(userDefaults: NSUserDefaults) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"

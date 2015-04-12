@@ -32,5 +32,20 @@ class BirthdayViewController: UIViewController {
         birthdayView.dayLabel.text = String(self.day)
         birthdayView.monthLabel.text = String(self.month)
         birthdayView.yearLabel.text = String(self.year)
+
+        birthdayView.incrementDayButton.addTarget(self.viewModel, action: "incrementDay", forControlEvents: .TouchUpInside)
+        birthdayView.decrementDayButton.addTarget(self.viewModel, action: "decrementDay", forControlEvents: .TouchUpInside)
+        birthdayView.incrementMonthButton.addTarget(self.viewModel, action: "incrementMonth", forControlEvents: .TouchUpInside)
+        birthdayView.decrementMonthButton.addTarget(self.viewModel, action: "decrementMonth", forControlEvents: .TouchUpInside)
+        birthdayView.incrementYearButton.addTarget(self.viewModel, action: "incrementYear", forControlEvents: .TouchUpInside)
+        birthdayView.decrementYearButton.addTarget(self.viewModel, action: "decrementYear", forControlEvents: .TouchUpInside)
+        birthdayView.saveButton.addTarget(self, action: "saveBirthday", forControlEvents: .TouchUpInside)
+    }
+
+    //MARK: Button Actions
+
+    @objc
+    private func saveBirthday() {
+        self.viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
     }
 }
