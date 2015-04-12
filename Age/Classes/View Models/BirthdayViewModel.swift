@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BirthdayViewModel {
+public class BirthdayViewModel: NSObject {
 
     //MARK: Properties
 
@@ -18,7 +18,7 @@ public class BirthdayViewModel {
 
     //MARK: Initialization
 
-    convenience public init() {
+    convenience public override init() {
         self.init(day: 1, month: 1, year: 2015)
     }
 
