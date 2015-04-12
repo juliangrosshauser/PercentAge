@@ -47,5 +47,6 @@ class BirthdayViewController: UIViewController {
     @objc
     private func saveBirthday() {
         self.viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
