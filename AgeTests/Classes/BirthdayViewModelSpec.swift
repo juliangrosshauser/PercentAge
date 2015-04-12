@@ -127,6 +127,11 @@ class BirthdayViewModelSpec: QuickSpec {
 
                 beforeEach {
                     userDefaults = NSUserDefaults()
+
+                    // clear user defaults
+                    if let domainName = NSBundle.mainBundle().bundleIdentifier {
+                        userDefaults.removePersistentDomainForName(domainName)
+                    }
                 }
 
                 afterEach {
