@@ -14,13 +14,34 @@ class BirthdayViewController: UIViewController {
 
     private var viewModel = BirthdayViewModel()
 
-    private var day: Int = 1
-    private var month: Int = 1
-    private var year: Int = 2015
+    private var day: Int {
+        didSet {
+            let birthdayView = self.view as! BirthdayView
+            birthdayView.dayLabel.text = String(day)
+        }
+    }
+
+    private var month: Int {
+        didSet {
+            let birthdayView = self.view as! BirthdayView
+            birthdayView.monthLabel.text = String(month)
+        }
+    }
+
+    private var year: Int {
+        didSet {
+            let birthdayView = self.view as! BirthdayView
+            birthdayView.yearLabel.text = String(year)
+        }
+    }
 
     //MARK: Initialization
 
     init() {
+        self.day = self.viewModel.day
+        self.month = self.viewModel.month
+        self.year = self.viewModel.year
+
         super.init(nibName: nil, bundle: nil)
 
         self.viewModel.addObserver(self, forKeyPath: "day", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
@@ -29,6 +50,10 @@ class BirthdayViewController: UIViewController {
     }
 
     required init(coder aDecoder: NSCoder) {
+        self.day = self.viewModel.day
+        self.month = self.viewModel.month
+        self.year = self.viewModel.year
+
         super.init(coder: aDecoder)
     }
 
