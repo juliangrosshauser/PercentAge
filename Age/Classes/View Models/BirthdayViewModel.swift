@@ -12,9 +12,11 @@ public class BirthdayViewModel: NSObject {
 
     //MARK: Properties
 
-    private(set) public var day: Int
-    private(set) public var month: Int
-    private(set) public var year: Int
+    static public var observeContext = 0
+
+    dynamic private(set) public var day: Int
+    dynamic private(set) public var month: Int
+    dynamic private(set) public var year: Int
 
     //MARK: Initialization
 

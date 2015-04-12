@@ -18,6 +18,54 @@ class BirthdayViewController: UIViewController {
     private var month: Int = 1
     private var year: Int = 2015
 
+    //MARK: Initialization
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        self.viewModel.addObserver(self, forKeyPath: "day", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
+        self.viewModel.addObserver(self, forKeyPath: "month", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
+        self.viewModel.addObserver(self, forKeyPath: "year", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    //MARK: Deinitialization
+
+    deinit {
+        self.viewModel.removeObserver(self, forKeyPath: "day", context: &BirthdayViewModel.observeContext)
+        self.viewModel.removeObserver(self, forKeyPath: "month", context: &BirthdayViewModel.observeContext)
+        self.viewModel.removeObserver(self, forKeyPath: "year", context: &BirthdayViewModel.observeContext)
+    }
+
+    //MARK: Key-Value Observing
+
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if (context == &BirthdayViewModel.observeContext) {
+            if let newValue = change[NSKeyValueChangeNewKey] as? Int {
+                switch keyPath {
+                    case "day":
+                        self.day = newValue
+
+                    case "month":
+                        self.month = newValue
+
+                    case "year":
+                        self.year = newValue
+
+                    default:
+                        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+                }
+            } else {
+                super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            }
+        } else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        }
+    }
+
     //MARK: UIViewController
 
     override func loadView() {
