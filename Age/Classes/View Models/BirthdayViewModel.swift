@@ -21,7 +21,25 @@ public class BirthdayViewModel: NSObject {
     //MARK: Initialization
 
     convenience public override init() {
-        self.init(day: 1, month: 1, year: 2015)
+        let day: Int
+        let month: Int
+        let year: Int
+        let defaults = NSUserDefaults.standardUserDefaults()
+
+        if let birthday = defaults.objectForKey("birthday") as? NSDate {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) as NSCalendar!
+            let birthdayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: birthday)
+
+            day = birthdayComponents.day
+            month = birthdayComponents.month
+            year = birthdayComponents.year
+        } else {
+            day = 1
+            month = 1
+            year = 2015
+        }
+
+        self.init(day: day, month: month, year: year)
     }
 
     public init(day: Int, month: Int, year: Int) {
