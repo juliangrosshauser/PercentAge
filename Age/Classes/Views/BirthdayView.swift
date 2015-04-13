@@ -35,9 +35,8 @@ class BirthdayView: UIView {
         for label in labels {
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
             label.textAlignment = NSTextAlignment.Center
-            label.layer.borderWidth = 1
-            label.layer.borderColor = UIColor.grayColor().CGColor
-            label.layer.cornerRadius = 5
+            label.font = UIFont(name: "Avenir Next", size: 32)
+            label.textColor = UIColor.whiteColor()
             self.addSubview(label)
         }
 
@@ -85,7 +84,7 @@ class BirthdayView: UIView {
 
         self.addConstraint(NSLayoutConstraint(item: self.dayLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 35))
         self.addConstraint(NSLayoutConstraint(item: self.monthLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 60))
+        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 80))
 
         self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 20))
         self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
