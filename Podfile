@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'AgeTests' do
-  pod 'Quick', '~> 0.3.0'
-  pod 'Nimble', '~> 0.4.1'
+  pod 'Quick', '~> 0.3.1'
+  pod 'Nimble', '~> 0.4.2'
 end
 
