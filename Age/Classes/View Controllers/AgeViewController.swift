@@ -30,7 +30,7 @@ public class AgeViewController: UIViewController {
             self.ageLabel.sizeToFit()
             self.ageLabel.center = self.view.center
         } else {
-            self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
+            self.presentViewController(BirthdayViewController(), animated: false, completion: nil)
         }
     }
 
