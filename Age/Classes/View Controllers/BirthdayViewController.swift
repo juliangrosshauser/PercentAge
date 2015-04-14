@@ -14,34 +14,9 @@ class BirthdayViewController: UIViewController {
 
     private var viewModel = BirthdayViewModel()
 
-    private var day: Int {
-        didSet {
-            let birthdayView = self.view as! BirthdayView
-            birthdayView.dayLabel.text = String(day)
-        }
-    }
-
-    private var month: Int {
-        didSet {
-            let birthdayView = self.view as! BirthdayView
-            birthdayView.monthLabel.text = String(month)
-        }
-    }
-
-    private var year: Int {
-        didSet {
-            let birthdayView = self.view as! BirthdayView
-            birthdayView.yearLabel.text = String(year)
-        }
-    }
-
     //MARK: Initialization
 
     init() {
-        self.day = self.viewModel.day
-        self.month = self.viewModel.month
-        self.year = self.viewModel.year
-
         super.init(nibName: nil, bundle: nil)
 
         self.viewModel.addObserver(self, forKeyPath: "day", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
@@ -50,10 +25,6 @@ class BirthdayViewController: UIViewController {
     }
 
     required init(coder aDecoder: NSCoder) {
-        self.day = self.viewModel.day
-        self.month = self.viewModel.month
-        self.year = self.viewModel.year
-
         super.init(coder: aDecoder)
     }
 
@@ -70,15 +41,17 @@ class BirthdayViewController: UIViewController {
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if (context == &BirthdayViewModel.observeContext) {
             if let newValue = change[NSKeyValueChangeNewKey] as? Int {
+                let birthdayView = self.view as! BirthdayView
+
                 switch keyPath {
                     case "day":
-                        self.day = newValue
+                        birthdayView.dayLabel.text = String(newValue)
 
                     case "month":
-                        self.month = newValue
+                        birthdayView.monthLabel.text = String(newValue)
 
                     case "year":
-                        self.year = newValue
+                        birthdayView.yearLabel.text = String(newValue)
 
                     default:
                         super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
@@ -102,9 +75,9 @@ class BirthdayViewController: UIViewController {
 
         let birthdayView = self.view as! BirthdayView
 
-        birthdayView.dayLabel.text = String(self.day)
-        birthdayView.monthLabel.text = String(self.month)
-        birthdayView.yearLabel.text = String(self.year)
+        birthdayView.dayLabel.text = String(self.viewModel.day)
+        birthdayView.monthLabel.text = String(self.viewModel.month)
+        birthdayView.yearLabel.text = String(self.viewModel.year)
 
         birthdayView.incrementDayButton.addTarget(self.viewModel, action: "incrementDay", forControlEvents: .TouchUpInside)
         birthdayView.decrementDayButton.addTarget(self.viewModel, action: "decrementDay", forControlEvents: .TouchUpInside)
