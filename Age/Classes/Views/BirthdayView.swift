@@ -36,7 +36,7 @@ class BirthdayView: UIView {
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
             label.textAlignment = NSTextAlignment.Center
             label.font = UIFont(name: "Avenir Next", size: 32)
-            label.textColor = UIColor.whiteColor()
+            label.textColor = UIColor(red:0.14, green:0.82, blue:0.99, alpha:1)
             self.addSubview(label)
         }
 
