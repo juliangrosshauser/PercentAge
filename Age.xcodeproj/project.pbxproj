@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7449D66262990B4AB9C861CF /* Pods_AgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5988AFF4CBA606F3CD78F3C8 /* Pods_AgeTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B94565551ADF0CC10040B324 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94565541ADF0CC10040B324 /* NavigationController.swift */; };
 		B946B0DA1AB4A10100D0A599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D21AB4A10100D0A599 /* AppDelegate.swift */; };
 		B946B0DB1AB4A10100D0A599 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B0D41AB4A10100D0A599 /* AgeViewController.swift */; };
 		B946B0DC1AB4A10100D0A599 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B0D61AB4A10100D0A599 /* LaunchScreen.xib */; };
@@ -34,6 +35,7 @@
 		136B38BCFA6E57D6C6C29274 /* Pods-AgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests.release.xcconfig"; sourceTree = "<group>"; };
 		5988AFF4CBA606F3CD78F3C8 /* Pods_AgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BA41C716111D3837EB2254 /* Pods-AgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AgeTests/Pods-AgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B94565541ADF0CC10040B324 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationController.swift; path = "Age/Classes/View Controllers/NavigationController.swift"; sourceTree = SOURCE_ROOT; };
 		B946B0AA1AB4A01300D0A599 /* Age.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Age.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0BF1AB4A01300D0A599 /* AgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0D21AB4A10100D0A599 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				B946B0D41AB4A10100D0A599 /* AgeViewController.swift */,
 				B946B1001AB4A94F00D0A599 /* BirthdayViewController.swift */,
+				B94565541ADF0CC10040B324 /* NavigationController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				B946B1011AB4A94F00D0A599 /* BirthdayViewController.swift in Sources */,
 				B9A7FD081AD7241800F59607 /* BirthdayViewModel.swift in Sources */,
 				B9B827891AD476BE0083974B /* AgeViewModel.swift in Sources */,
+				B94565551ADF0CC10040B324 /* NavigationController.swift in Sources */,
 				B9C7ED3D1AB7818700A78482 /* BirthdayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
