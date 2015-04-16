@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B946B0A91AB4A01300D0A599"
-               BuildableName = "Age.app"
-               BlueprintName = "Age"
-               ReferencedContainer = "container:Age.xcodeproj">
+               BuildableName = "PercentAge.app"
+               BlueprintName = "PercentAge"
+               ReferencedContainer = "container:PercentAge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B946B0BE1AB4A01300D0A599"
-               BuildableName = "AgeTests.xctest"
-               BlueprintName = "AgeTests"
-               ReferencedContainer = "container:Age.xcodeproj">
+               BuildableName = "PercentAgeTests.xctest"
+               BlueprintName = "PercentAgeTests"
+               ReferencedContainer = "container:PercentAge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B946B0BE1AB4A01300D0A599"
-               BuildableName = "AgeTests.xctest"
-               BlueprintName = "AgeTests"
-               ReferencedContainer = "container:Age.xcodeproj">
+               BuildableName = "PercentAgeTests.xctest"
+               BlueprintName = "PercentAgeTests"
+               ReferencedContainer = "container:PercentAge.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B946B0A91AB4A01300D0A599"
-            BuildableName = "Age.app"
-            BlueprintName = "Age"
-            ReferencedContainer = "container:Age.xcodeproj">
+            BuildableName = "PercentAge.app"
+            BlueprintName = "PercentAge"
+            ReferencedContainer = "container:PercentAge.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B946B0A91AB4A01300D0A599"
-            BuildableName = "Age.app"
-            BlueprintName = "Age"
-            ReferencedContainer = "container:Age.xcodeproj">
+            BuildableName = "PercentAge.app"
+            BlueprintName = "PercentAge"
+            ReferencedContainer = "container:PercentAge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B946B0A91AB4A01300D0A599"
-            BuildableName = "Age.app"
-            BlueprintName = "Age"
-            ReferencedContainer = "container:Age.xcodeproj">
+            BuildableName = "PercentAge.app"
+            BlueprintName = "PercentAge"
+            ReferencedContainer = "container:PercentAge.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

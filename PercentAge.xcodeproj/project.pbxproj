@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51F71B78AE8CEB7A90649C50 /* Pods_PercentAgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B905546C1AE0634F003A79FC /* AgeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B905546A1AE0634F003A79FC /* AgeViewModelSpec.swift */; };
+		B905546D1AE0634F003A79FC /* BirthdayViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B905546B1AE0634F003A79FC /* BirthdayViewModelSpec.swift */; };
+		B92E6E771AE060C300CB60A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E681AE060C300CB60A7 /* AppDelegate.swift */; };
+		B92E6E781AE060C300CB60A7 /* AgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E6A1AE060C300CB60A7 /* AgeViewController.swift */; };
+		B92E6E791AE060C300CB60A7 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E6B1AE060C300CB60A7 /* BirthdayViewController.swift */; };
+		B92E6E7A1AE060C300CB60A7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E6C1AE060C300CB60A7 /* NavigationController.swift */; };
+		B92E6E7B1AE060C300CB60A7 /* AgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E6E1AE060C300CB60A7 /* AgeViewModel.swift */; };
+		B92E6E7C1AE060C300CB60A7 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E6F1AE060C300CB60A7 /* BirthdayViewModel.swift */; };
+		B92E6E7D1AE060C300CB60A7 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E711AE060C300CB60A7 /* BirthdayView.swift */; };
+		B92E6E7E1AE060C300CB60A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E731AE060C300CB60A7 /* LaunchScreen.xib */; };
+		B92E6E7F1AE060C300CB60A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E751AE060C300CB60A7 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B946B0C01AB4A01300D0A599 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B946B0A21AB4A01300D0A599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B946B0A91AB4A01300D0A599;
+			remoteInfo = Age;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		896E3D5775E4B2BE7DD733A9 /* Pods-PercentAgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PercentAgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests.release.xcconfig"; sourceTree = "<group>"; };
+		98D4E98F5A192878B62093E1 /* Pods-PercentAgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PercentAgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B905546A1AE0634F003A79FC /* AgeViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewModelSpec.swift; sourceTree = "<group>"; };
+		B905546B1AE0634F003A79FC /* BirthdayViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewModelSpec.swift; sourceTree = "<group>"; };
+		B92E6E681AE060C300CB60A7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B92E6E6A1AE060C300CB60A7 /* AgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewController.swift; sourceTree = "<group>"; };
+		B92E6E6B1AE060C300CB60A7 /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		B92E6E6C1AE060C300CB60A7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		B92E6E6E1AE060C300CB60A7 /* AgeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeViewModel.swift; sourceTree = "<group>"; };
+		B92E6E6F1AE060C300CB60A7 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		B92E6E711AE060C300CB60A7 /* BirthdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		B92E6E741AE060C300CB60A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B92E6E751AE060C300CB60A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B92E6E761AE060C300CB60A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B92E6E861AE060CB00CB60A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B946B0AA1AB4A01300D0A599 /* PercentAge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PercentAge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PercentAgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PercentAgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B946B0A71AB4A01300D0A599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B946B0BC1AB4A01300D0A599 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51F71B78AE8CEB7A90649C50 /* Pods_PercentAgeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B90554691AE0634F003A79FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B905546A1AE0634F003A79FC /* AgeViewModelSpec.swift */,
+				B905546B1AE0634F003A79FC /* BirthdayViewModelSpec.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B92E6E651AE060C300CB60A7 /* PercentAge */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E661AE060C300CB60A7 /* Classes */,
+				B92E6E721AE060C300CB60A7 /* Resources */,
+			);
+			path = PercentAge;
+			sourceTree = "<group>";
+		};
+		B92E6E661AE060C300CB60A7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E671AE060C300CB60A7 /* Application */,
+				B92E6E691AE060C300CB60A7 /* View Controllers */,
+				B92E6E6D1AE060C300CB60A7 /* View Models */,
+				B92E6E701AE060C300CB60A7 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B92E6E671AE060C300CB60A7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E681AE060C300CB60A7 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B92E6E691AE060C300CB60A7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E6A1AE060C300CB60A7 /* AgeViewController.swift */,
+				B92E6E6B1AE060C300CB60A7 /* BirthdayViewController.swift */,
+				B92E6E6C1AE060C300CB60A7 /* NavigationController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B92E6E6D1AE060C300CB60A7 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E6E1AE060C300CB60A7 /* AgeViewModel.swift */,
+				B92E6E6F1AE060C300CB60A7 /* BirthdayViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		B92E6E701AE060C300CB60A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E711AE060C300CB60A7 /* BirthdayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B92E6E721AE060C300CB60A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E731AE060C300CB60A7 /* LaunchScreen.xib */,
+				B92E6E751AE060C300CB60A7 /* Images.xcassets */,
+				B92E6E761AE060C300CB60A7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B92E6E811AE060CB00CB60A7 /* PercentAgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B90554691AE0634F003A79FC /* Classes */,
+				B92E6E851AE060CB00CB60A7 /* Resources */,
+			);
+			path = PercentAgeTests;
+			sourceTree = "<group>";
+		};
+		B92E6E851AE060CB00CB60A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B92E6E861AE060CB00CB60A7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B946B0A11AB4A01300D0A599 = {
+			isa = PBXGroup;
+			children = (
+				B92E6E651AE060C300CB60A7 /* PercentAge */,
+				B92E6E811AE060CB00CB60A7 /* PercentAgeTests */,
+				B946B0AB1AB4A01300D0A599 /* Products */,
+				D146B013C28A2E567460661B /* Frameworks */,
+				EB6218B0A4303157707E96CD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		B946B0AB1AB4A01300D0A599 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B946B0AA1AB4A01300D0A599 /* PercentAge.app */,
+				B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D146B013C28A2E567460661B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB6218B0A4303157707E96CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98D4E98F5A192878B62093E1 /* Pods-PercentAgeTests.debug.xcconfig */,
+				896E3D5775E4B2BE7DD733A9 /* Pods-PercentAgeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B946B0A91AB4A01300D0A599 /* PercentAge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B946B0C91AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "PercentAge" */;
+			buildPhases = (
+				B946B0A61AB4A01300D0A599 /* Sources */,
+				B946B0A71AB4A01300D0A599 /* Frameworks */,
+				B946B0A81AB4A01300D0A599 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PercentAge;
+			productName = Age;
+			productReference = B946B0AA1AB4A01300D0A599 /* PercentAge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B946B0BE1AB4A01300D0A599 /* PercentAgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B946B0CC1AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "PercentAgeTests" */;
+			buildPhases = (
+				E6D1388DC8B335F7D7D6DE82 /* Check Pods Manifest.lock */,
+				B946B0BB1AB4A01300D0A599 /* Sources */,
+				B946B0BC1AB4A01300D0A599 /* Frameworks */,
+				B946B0BD1AB4A01300D0A599 /* Resources */,
+				ACA7F5ECB49E512A915B086E /* Embed Pods Frameworks */,
+				F634086F3544B576677173E4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B946B0C11AB4A01300D0A599 /* PBXTargetDependency */,
+			);
+			name = PercentAgeTests;
+			productName = AgeTests;
+			productReference = B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B946B0A21AB4A01300D0A599 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Julian Grosshauser";
+				TargetAttributes = {
+					B946B0A91AB4A01300D0A599 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					B946B0BE1AB4A01300D0A599 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = B946B0A91AB4A01300D0A599;
+					};
+				};
+			};
+			buildConfigurationList = B946B0A51AB4A01300D0A599 /* Build configuration list for PBXProject "PercentAge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B946B0A11AB4A01300D0A599;
+			productRefGroup = B946B0AB1AB4A01300D0A599 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B946B0A91AB4A01300D0A599 /* PercentAge */,
+				B946B0BE1AB4A01300D0A599 /* PercentAgeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B946B0A81AB4A01300D0A599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92E6E7E1AE060C300CB60A7 /* LaunchScreen.xib in Resources */,
+				B92E6E7F1AE060C300CB60A7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B946B0BD1AB4A01300D0A599 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACA7F5ECB49E512A915B086E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6D1388DC8B335F7D7D6DE82 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F634086F3544B576677173E4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B946B0A61AB4A01300D0A599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92E6E781AE060C300CB60A7 /* AgeViewController.swift in Sources */,
+				B92E6E7D1AE060C300CB60A7 /* BirthdayView.swift in Sources */,
+				B92E6E7A1AE060C300CB60A7 /* NavigationController.swift in Sources */,
+				B92E6E771AE060C300CB60A7 /* AppDelegate.swift in Sources */,
+				B92E6E7C1AE060C300CB60A7 /* BirthdayViewModel.swift in Sources */,
+				B92E6E7B1AE060C300CB60A7 /* AgeViewModel.swift in Sources */,
+				B92E6E791AE060C300CB60A7 /* BirthdayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B946B0BB1AB4A01300D0A599 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B905546D1AE0634F003A79FC /* BirthdayViewModelSpec.swift in Sources */,
+				B905546C1AE0634F003A79FC /* AgeViewModelSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B946B0C11AB4A01300D0A599 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B946B0A91AB4A01300D0A599 /* PercentAge */;
+			targetProxy = B946B0C01AB4A01300D0A599 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B92E6E731AE060C300CB60A7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B92E6E741AE060C300CB60A7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B946B0C71AB4A01300D0A599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B946B0C81AB4A01300D0A599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B946B0CA1AB4A01300D0A599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/PercentAge/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = PercentAge;
+			};
+			name = Debug;
+		};
+		B946B0CB1AB4A01300D0A599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "$(SRCROOT)/PercentAge/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = PercentAge;
+			};
+			name = Release;
+		};
+		B946B0CD1AB4A01300D0A599 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D4E98F5A192878B62093E1 /* Pods-PercentAgeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PercentAgeTests/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = PercentAgeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PercentAge.app/PercentAge";
+			};
+			name = Debug;
+		};
+		B946B0CE1AB4A01300D0A599 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 896E3D5775E4B2BE7DD733A9 /* Pods-PercentAgeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PercentAgeTests/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = PercentAgeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PercentAge.app/PercentAge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B946B0A51AB4A01300D0A599 /* Build configuration list for PBXProject "PercentAge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B946B0C71AB4A01300D0A599 /* Debug */,
+				B946B0C81AB4A01300D0A599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B946B0C91AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "PercentAge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B946B0CA1AB4A01300D0A599 /* Debug */,
+				B946B0CB1AB4A01300D0A599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B946B0CC1AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "PercentAgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B946B0CD1AB4A01300D0A599 /* Debug */,
+				B946B0CE1AB4A01300D0A599 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B946B0A21AB4A01300D0A599 /* Project object */;
+}

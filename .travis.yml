@@ -1,6 +1,6 @@
 language: objective-c
-xcode_workspace: Age.xcworkspace
-xcode_scheme: Age
+xcode_workspace: PercentAge.xcworkspace
+xcode_scheme: PercentAge
 xcode_sdk: iphonesimulator8.1
 before_install:
   - gem update

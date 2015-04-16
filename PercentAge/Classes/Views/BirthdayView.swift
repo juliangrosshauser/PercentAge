@@ -1,6 +1,6 @@
 //
 //  BirthdayView.swift
-//  Age
+//  PercentAge
 //
 //  Created by Julian Grosshauser on 16/03/15.
 //  Copyright (c) 2015 Julian Grosshauser. All rights reserved.
