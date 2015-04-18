@@ -51,7 +51,7 @@ public class BirthdayViewModel: NSObject {
     //MARK: Button Actions
 
     @objc
-    public func incrementDay() {
+    public func incrementDay(sender: AnyObject) {
         if (self.day == 31) {
             self.day = 1
         } else {
@@ -60,7 +60,7 @@ public class BirthdayViewModel: NSObject {
     }
 
     @objc
-    public func decrementDay() {
+    public func decrementDay(sender: AnyObject) {
         if (self.day == 1) {
             self.day = 31
         } else {
@@ -69,7 +69,7 @@ public class BirthdayViewModel: NSObject {
     }
 
     @objc
-    public func incrementMonth() {
+    public func incrementMonth(sender: AnyObject) {
         if (self.month == 12) {
             self.month = 1
         } else {
@@ -78,7 +78,7 @@ public class BirthdayViewModel: NSObject {
     }
 
     @objc
-    public func decrementMonth() {
+    public func decrementMonth(sender: AnyObject) {
         if (self.month == 1) {
             self.month = 12
         } else {
@@ -87,7 +87,7 @@ public class BirthdayViewModel: NSObject {
     }
 
     @objc
-    public func incrementYear() {
+    public func incrementYear(sender: AnyObject) {
         if (self.year == 2015) {
             self.year = 1900
         } else {
@@ -96,7 +96,7 @@ public class BirthdayViewModel: NSObject {
     }
 
     @objc
-    public func decrementYear() {
+    public func decrementYear(sender: AnyObject) {
         if (self.year == 1900) {
             self.year = 2015
         } else {

@@ -18,7 +18,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("day value is at bottom limit") {
                     it("increments day value") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.incrementDay()
+                        birthdayViewModel.incrementDay(self)
                         expect(birthdayViewModel.day).to(equal(2))
                     }
                 }
@@ -26,7 +26,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("day value is at upper limit") {
                     it("sets day value to bottom limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 31, month: 1, year: 2015)
-                        birthdayViewModel.incrementDay()
+                        birthdayViewModel.incrementDay(self)
                         expect(birthdayViewModel.day).to(equal(1))
                     }
                 }
@@ -36,7 +36,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("day value is at bottom limit") {
                     it("sets day value to upper limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.decrementDay()
+                        birthdayViewModel.decrementDay(self)
                         expect(birthdayViewModel.day).to(equal(31))
                     }
                 }
@@ -44,7 +44,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("day value is at upper limit") {
                     it("decrements day value") {
                         let birthdayViewModel = BirthdayViewModel(day: 31, month: 1, year: 2015)
-                        birthdayViewModel.decrementDay()
+                        birthdayViewModel.decrementDay(self)
                         expect(birthdayViewModel.day).to(equal(30))
                     }
                 }
@@ -54,7 +54,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("month value is at bottom limit") {
                     it("increments month value") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.incrementMonth()
+                        birthdayViewModel.incrementMonth(self)
                         expect(birthdayViewModel.month).to(equal(2))
                     }
                 }
@@ -62,7 +62,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("month value is at upper limit") {
                     it("sets month value to bottom limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 12, year: 2015)
-                        birthdayViewModel.incrementMonth()
+                        birthdayViewModel.incrementMonth(self)
                         expect(birthdayViewModel.month).to(equal(1))
                     }
                 }
@@ -72,7 +72,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("month value is at bottom limit") {
                     it("sets month value to upper limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.decrementMonth()
+                        birthdayViewModel.decrementMonth(self)
                         expect(birthdayViewModel.month).to(equal(12))
                     }
                 }
@@ -80,7 +80,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("month value is at upper limit") {
                     it("decrements month value") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 12, year: 2015)
-                        birthdayViewModel.decrementMonth()
+                        birthdayViewModel.decrementMonth(self)
                         expect(birthdayViewModel.month).to(equal(11))
                     }
                 }
@@ -90,7 +90,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("year value is at bottom limit") {
                     it("increments year value") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 1900)
-                        birthdayViewModel.incrementYear()
+                        birthdayViewModel.incrementYear(self)
                         expect(birthdayViewModel.year).to(equal(1901))
                     }
                 }
@@ -98,7 +98,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("year value is at upper limit") {
                     it("sets year value to bottom limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.incrementYear()
+                        birthdayViewModel.incrementYear(self)
                         expect(birthdayViewModel.year).to(equal(1900))
                     }
                 }
@@ -108,7 +108,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("year value is at bottom limit") {
                     it("sets year value to upper limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 1900)
-                        birthdayViewModel.decrementYear()
+                        birthdayViewModel.decrementYear(self)
                         expect(birthdayViewModel.year).to(equal(2015))
                     }
                 }
@@ -116,7 +116,7 @@ class BirthdayViewModelSpec: QuickSpec {
                 context("year value is at upper limit") {
                     it("decrements year value") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
-                        birthdayViewModel.decrementYear()
+                        birthdayViewModel.decrementYear(self)
                         expect(birthdayViewModel.year).to(equal(2014))
                     }
                 }

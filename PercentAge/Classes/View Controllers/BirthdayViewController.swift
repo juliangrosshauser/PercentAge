@@ -80,13 +80,13 @@ class BirthdayViewController: UIViewController {
         birthdayView.monthLabel.text = String(self.viewModel.month)
         birthdayView.yearLabel.text = String(self.viewModel.year)
 
-        birthdayView.incrementDayButton.addTarget(self.viewModel, action: "incrementDay", forControlEvents: .TouchUpInside)
-        birthdayView.decrementDayButton.addTarget(self.viewModel, action: "decrementDay", forControlEvents: .TouchUpInside)
-        birthdayView.incrementMonthButton.addTarget(self.viewModel, action: "incrementMonth", forControlEvents: .TouchUpInside)
-        birthdayView.decrementMonthButton.addTarget(self.viewModel, action: "decrementMonth", forControlEvents: .TouchUpInside)
-        birthdayView.incrementYearButton.addTarget(self.viewModel, action: "incrementYear", forControlEvents: .TouchUpInside)
-        birthdayView.decrementYearButton.addTarget(self.viewModel, action: "decrementYear", forControlEvents: .TouchUpInside)
-        birthdayView.saveButton.addTarget(self, action: "saveBirthday", forControlEvents: .TouchUpInside)
+        birthdayView.incrementDayButton.addTarget(self.viewModel, action: "incrementDay:", forControlEvents: .TouchUpInside)
+        birthdayView.decrementDayButton.addTarget(self.viewModel, action: "decrementDay:", forControlEvents: .TouchUpInside)
+        birthdayView.incrementMonthButton.addTarget(self.viewModel, action: "incrementMonth:", forControlEvents: .TouchUpInside)
+        birthdayView.decrementMonthButton.addTarget(self.viewModel, action: "decrementMonth:", forControlEvents: .TouchUpInside)
+        birthdayView.incrementYearButton.addTarget(self.viewModel, action: "incrementYear:", forControlEvents: .TouchUpInside)
+        birthdayView.decrementYearButton.addTarget(self.viewModel, action: "decrementYear:", forControlEvents: .TouchUpInside)
+        birthdayView.saveButton.addTarget(self, action: "saveBirthday:", forControlEvents: .TouchUpInside)
 
         let longPressIncrementDay = UILongPressGestureRecognizer(target: self, action: "longPressIncrementDay:")
         longPressIncrementDay.minimumPressDuration = 0.3
@@ -116,7 +116,7 @@ class BirthdayViewController: UIViewController {
     //MARK: Button Actions
 
     @objc
-    private func saveBirthday() {
+    private func saveBirthday(sender: AnyObject) {
         self.viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -126,7 +126,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressIncrementDay(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementDay", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementDay:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
@@ -137,7 +137,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressIncrementMonth(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementMonth", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementMonth:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
@@ -148,7 +148,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressIncrementYear(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementYear", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementYear:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
@@ -159,7 +159,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressDecrementDay(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementDay", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementDay:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
@@ -170,7 +170,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressDecrementMonth(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementMonth", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementMonth:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
@@ -181,7 +181,7 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressDecrementYear(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementYear", userInfo: nil, repeats: true)
+            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementYear:", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
