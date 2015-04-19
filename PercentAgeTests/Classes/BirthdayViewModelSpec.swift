@@ -293,7 +293,10 @@ class BirthdayViewModelSpec: QuickSpec {
 
                 context("year value is at upper limit") {
                     it("sets year value to bottom limit") {
-                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
+                        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+                        let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
+
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: currentYear)
                         birthdayViewModel.incrementYear(self)
                         expect(birthdayViewModel.year).to(equal(1900))
                     }
@@ -301,19 +304,26 @@ class BirthdayViewModelSpec: QuickSpec {
             }
 
             describe("decrementYear") {
+                var currentYear: Int!
+
+                beforeEach {
+                    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+                    currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
+                }
+
                 context("year value is at bottom limit") {
                     it("sets year value to upper limit") {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 1900)
                         birthdayViewModel.decrementYear(self)
-                        expect(birthdayViewModel.year).to(equal(2015))
+                        expect(birthdayViewModel.year).to(equal(currentYear))
                     }
                 }
 
                 context("year value is at upper limit") {
                     it("decrements year value") {
-                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
+                        let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: currentYear)
                         birthdayViewModel.decrementYear(self)
-                        expect(birthdayViewModel.year).to(equal(2014))
+                        expect(birthdayViewModel.year).to(equal(currentYear - 1))
                     }
                 }
             }

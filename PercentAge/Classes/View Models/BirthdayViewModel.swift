@@ -104,7 +104,10 @@ public class BirthdayViewModel: NSObject {
 
     @objc
     public func incrementYear(sender: AnyObject) {
-        if (self.year == 2015) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
+
+        if (self.year == currentYear) {
             self.year = 1900
         } else {
             self.year++
@@ -113,8 +116,11 @@ public class BirthdayViewModel: NSObject {
 
     @objc
     public func decrementYear(sender: AnyObject) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
+
         if (self.year == 1900) {
-            self.year = 2015
+            self.year = currentYear
         } else {
             self.year--
         }
