@@ -25,18 +25,20 @@ public class BirthdayViewModel: NSObject {
         let month: Int
         let year: Int
         let defaults = NSUserDefaults.standardUserDefaults()
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
 
         if let birthday = defaults.objectForKey("birthday") as? NSDate {
-            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian) as NSCalendar!
             let birthdayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: birthday)
 
             day = birthdayComponents.day
             month = birthdayComponents.month
             year = birthdayComponents.year
         } else {
-            day = 1
-            month = 1
-            year = 2015
+            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+
+            day = todayComponents.day
+            month = todayComponents.month
+            year = todayComponents.year
         }
 
         self.init(day: day, month: month, year: year)
