@@ -52,7 +52,14 @@ public class BirthdayViewModel: NSObject {
 
     @objc
     public func incrementDay(sender: AnyObject) {
-        if (self.day == 31) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let dateComponents = NSDateComponents()
+
+        dateComponents.month = self.month
+        dateComponents.year = self.year
+        let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
+
+        if (self.day == dayRange.length) {
             self.day = 1
         } else {
             self.day++
@@ -61,8 +68,15 @@ public class BirthdayViewModel: NSObject {
 
     @objc
     public func decrementDay(sender: AnyObject) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let dateComponents = NSDateComponents()
+
+        dateComponents.month = self.month
+        dateComponents.year = self.year
+        let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
+
         if (self.day == 1) {
-            self.day = 31
+            self.day = dayRange.length
         } else {
             self.day--
         }
