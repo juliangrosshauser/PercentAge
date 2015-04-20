@@ -44,23 +44,19 @@ class BirthdayView: UIView {
 
         for button in buttons {
             button.setTranslatesAutoresizingMaskIntoConstraints(false)
-            button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-            button.layer.borderColor = UIColor.grayColor().CGColor
-            button.layer.borderWidth = 1
-            button.layer.cornerRadius = 10
             self.addSubview(button)
         }
 
         let incrementButtons = [self.incrementDayButton, self.incrementMonthButton, self.incrementYearButton]
 
         for incrementButton in incrementButtons {
-            incrementButton.setTitle("+", forState: UIControlState.Normal)
+            incrementButton.setImage(UIImage(named: "Plus Button"), forState: .Normal)
         }
 
         let decrementButtons = [self.decrementDayButton, self.decrementMonthButton, self.decrementYearButton]
 
         for decrementButton in decrementButtons {
-            decrementButton.setTitle("-", forState: UIControlState.Normal)
+            decrementButton.setImage(UIImage(named: "Minus Button"), forState: .Normal)
         }
 
         self.saveButton.setTranslatesAutoresizingMaskIntoConstraints(false)
