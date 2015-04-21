@@ -119,7 +119,7 @@ class BirthdayView: UIView {
         self.addConstraint(NSLayoutConstraint(item: self.yearTitleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.dayTitleLabel, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
 
         self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: -50))
-        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50))
+        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 60))
         self.addConstraint(NSLayoutConstraint(item: self.incrementMonthButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: self.decrementMonthButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.decrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: self.incrementYearButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
