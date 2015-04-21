@@ -12,9 +12,9 @@ class BirthdayView: UIView {
 
     //MARK: Properties
 
-    let dayLabel = UILabel()
-    let monthLabel = UILabel()
-    let yearLabel = UILabel()
+    let dayValueLabel = UILabel()
+    let monthValueLabel = UILabel()
+    let yearValueLabel = UILabel()
 
     let incrementDayButton = UIButton()
     let decrementDayButton = UIButton()
@@ -30,7 +30,7 @@ class BirthdayView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let labels = [self.dayLabel, self.monthLabel, self.yearLabel]
+        let labels = [self.dayValueLabel, self.monthValueLabel, self.yearValueLabel]
 
         for label in labels {
             label.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -64,9 +64,9 @@ class BirthdayView: UIView {
         self.saveButton.setTitle("Save", forState: UIControlState.Normal)
         self.addSubview(self.saveButton)
 
-        self.addConstraint(NSLayoutConstraint(item: self.dayLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 30))
-        self.addConstraint(NSLayoutConstraint(item: self.monthLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.dayValueLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 30))
+        self.addConstraint(NSLayoutConstraint(item: self.monthValueLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.yearValueLabel, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
 
         self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 50))
         self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0))
@@ -77,9 +77,9 @@ class BirthdayView: UIView {
 
         self.addConstraint(NSLayoutConstraint(item: self.saveButton, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 70))
 
-        self.addConstraint(NSLayoutConstraint(item: self.dayLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 40))
-        self.addConstraint(NSLayoutConstraint(item: self.monthLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 80))
+        self.addConstraint(NSLayoutConstraint(item: self.dayValueLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 40))
+        self.addConstraint(NSLayoutConstraint(item: self.monthValueLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.yearValueLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 80))
 
         self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 50))
         self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
@@ -90,12 +90,12 @@ class BirthdayView: UIView {
 
         self.addConstraint(NSLayoutConstraint(item: self.saveButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
 
-        self.addConstraint(NSLayoutConstraint(item: self.dayLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 0.8, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.monthLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.dayValueLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 0.8, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.monthValueLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.yearValueLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
 
-        self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: -50))
-        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50))
+        self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: -50))
+        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 50))
         self.addConstraint(NSLayoutConstraint(item: self.incrementMonthButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: self.decrementMonthButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.decrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: self.incrementYearButton, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self.incrementDayButton, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
@@ -103,16 +103,16 @@ class BirthdayView: UIView {
 
         self.addConstraint(NSLayoutConstraint(item: self.saveButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
 
-        self.addConstraint(NSLayoutConstraint(item: self.monthLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.dayLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 0.5, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.yearLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1.5, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.monthValueLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.dayValueLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 0.5, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.yearValueLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1.5, constant: 0))
 
-        self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.dayLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.incrementMonthButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.decrementMonthButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.incrementYearButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.yearLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: self.decrementYearButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.yearLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.incrementDayButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.decrementDayButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.dayValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.incrementMonthButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.decrementMonthButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.monthValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.incrementYearButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.yearValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: self.decrementYearButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self.yearValueLabel, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
 
         self.addConstraint(NSLayoutConstraint(item: self.saveButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
     }

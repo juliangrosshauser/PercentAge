@@ -46,13 +46,13 @@ class BirthdayViewController: UIViewController {
 
                 switch keyPath {
                     case "day":
-                        birthdayView.dayLabel.text = String(newValue)
+                        birthdayView.dayValueLabel.text = String(newValue)
 
                     case "month":
-                        birthdayView.monthLabel.text = String(newValue)
+                        birthdayView.monthValueLabel.text = String(newValue)
 
                     case "year":
-                        birthdayView.yearLabel.text = String(newValue)
+                        birthdayView.yearValueLabel.text = String(newValue)
 
                     default:
                         super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
@@ -76,9 +76,9 @@ class BirthdayViewController: UIViewController {
 
         let birthdayView = self.view as! BirthdayView
 
-        birthdayView.dayLabel.text = String(self.viewModel.day)
-        birthdayView.monthLabel.text = String(self.viewModel.month)
-        birthdayView.yearLabel.text = String(self.viewModel.year)
+        birthdayView.dayValueLabel.text = String(self.viewModel.day)
+        birthdayView.monthValueLabel.text = String(self.viewModel.month)
+        birthdayView.yearValueLabel.text = String(self.viewModel.year)
 
         birthdayView.incrementDayButton.addTarget(self.viewModel, action: "incrementDay:", forControlEvents: .TouchUpInside)
         birthdayView.decrementDayButton.addTarget(self.viewModel, action: "decrementDay:", forControlEvents: .TouchUpInside)
