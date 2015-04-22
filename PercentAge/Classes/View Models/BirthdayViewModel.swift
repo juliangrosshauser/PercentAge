@@ -128,13 +128,14 @@ public class BirthdayViewModel: NSObject {
 
     @objc
     public func saveBirthdayIntoUserDefaults(userDefaults: NSUserDefaults) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let birthdayComponents = NSDateComponents()
 
-        let day = NSString(format: "%02d", self.day)
-        let month = NSString(format: "%02d", self.month)
+        birthdayComponents.day = self.day
+        birthdayComponents.month = self.month
+        birthdayComponents.year = self.year
 
-        let birthday = dateFormatter.dateFromString("\(day)-\(month)-\(self.year)")
+        let birthday = calendar.dateFromComponents(birthdayComponents)
 
         userDefaults.setObject(birthday, forKey: "birthday")
     }
