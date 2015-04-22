@@ -37,10 +37,10 @@ public class AgeViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: UIBarButtonItemStyle.Plain, target: self, action: "showBirthdaySettings:")
+        let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
         self.navigationItem.leftBarButtonItem = calendarButton
 
-        self.ageLabel.textAlignment = NSTextAlignment.Center
+        self.ageLabel.textAlignment = .Center
         self.ageLabel.font = UIFont(name: "Avenir Next", size: 36)
         self.ageLabel.textColor = UIColor.whiteColor()
 

@@ -20,9 +20,9 @@ public class AgeViewModel {
     public func ageInPercent(#birthday: NSDate, today: NSDate) -> Float {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
 
-        let currentYear = calendar.component(NSCalendarUnit.CalendarUnitYear, fromDate: today)
-        let birthdayDay = calendar.component(NSCalendarUnit.CalendarUnitDay, fromDate: birthday)
-        let birthdayMonth = calendar.component(NSCalendarUnit.CalendarUnitMonth, fromDate: birthday)
+        let currentYear = calendar.component(.CalendarUnitYear, fromDate: today)
+        let birthdayDay = calendar.component(.CalendarUnitDay, fromDate: birthday)
+        let birthdayMonth = calendar.component(.CalendarUnitMonth, fromDate: birthday)
 
         let birthdayCurrentYearComponents = NSDateComponents()
         birthdayCurrentYearComponents.day = birthdayDay
@@ -31,7 +31,7 @@ public class AgeViewModel {
 
         let birthdayCurrentYear = calendar.dateFromComponents(birthdayCurrentYearComponents)!
 
-        let yearDifferenceComponent = calendar.components(NSCalendarUnit.CalendarUnitYear, fromDate: birthday, toDate: today, options: NSCalendarOptions.allZeros)
+        let yearDifferenceComponent = calendar.components(.CalendarUnitYear, fromDate: birthday, toDate: today, options: .allZeros)
         let years = yearDifferenceComponent.year
 
         if (calendar.isDate(birthdayCurrentYear, inSameDayAsDate: today)) {
@@ -78,7 +78,7 @@ public class AgeViewModel {
 
     public func dayDifference(#before: NSDate, after: NSDate) -> Int {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let dayDifference = calendar!.components(NSCalendarUnit.CalendarUnitDay, fromDate: before, toDate: after, options: NSCalendarOptions.allZeros)
+        let dayDifference = calendar!.components(.CalendarUnitDay, fromDate: before, toDate: after, options: .allZeros)
         
         return dayDifference.day
     }

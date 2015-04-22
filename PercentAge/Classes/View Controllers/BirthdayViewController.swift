@@ -20,9 +20,9 @@ class BirthdayViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        self.viewModel.addObserver(self, forKeyPath: "day", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
-        self.viewModel.addObserver(self, forKeyPath: "month", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
-        self.viewModel.addObserver(self, forKeyPath: "year", options: NSKeyValueObservingOptions.New, context: &BirthdayViewModel.observeContext)
+        self.viewModel.addObserver(self, forKeyPath: "day", options: .New, context: &BirthdayViewModel.observeContext)
+        self.viewModel.addObserver(self, forKeyPath: "month", options: .New, context: &BirthdayViewModel.observeContext)
+        self.viewModel.addObserver(self, forKeyPath: "year", options: .New, context: &BirthdayViewModel.observeContext)
     }
 
     required init(coder aDecoder: NSCoder) {
