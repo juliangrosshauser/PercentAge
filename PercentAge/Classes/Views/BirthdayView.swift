@@ -71,12 +71,14 @@ class BirthdayView: UIView {
 
         for incrementButton in incrementButtons {
             incrementButton.setImage(UIImage(named: "Plus Button"), forState: .Normal)
+            incrementButton.setImage(UIImage(named: "Plus Button"), forState: .Highlighted)
         }
 
         let decrementButtons = [self.decrementDayButton, self.decrementMonthButton, self.decrementYearButton]
 
         for decrementButton in decrementButtons {
             decrementButton.setImage(UIImage(named: "Minus Button"), forState: .Normal)
+            decrementButton.setImage(UIImage(named: "Minus Button"), forState: .Highlighted)
         }
 
         self.saveButton.setTranslatesAutoresizingMaskIntoConstraints(false)
