@@ -50,10 +50,9 @@ public class BirthdayViewModel: NSObject {
         self.year = year
     }
 
-    //MARK: Button Actions
+    //MARK: Increment/Decrement Properties
 
-    @objc
-    public func incrementDay(sender: AnyObject) {
+    public func incrementDay() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let dateComponents = NSDateComponents()
 
@@ -68,8 +67,7 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
-    public func decrementDay(sender: AnyObject) {
+    public func decrementDay() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let dateComponents = NSDateComponents()
 
@@ -84,8 +82,7 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
-    public func incrementMonth(sender: AnyObject) {
+    public func incrementMonth() {
         if (self.month == 12) {
             self.month = 1
         } else {
@@ -93,8 +90,7 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
-    public func decrementMonth(sender: AnyObject) {
+    public func decrementMonth() {
         if (self.month == 1) {
             self.month = 12
         } else {
@@ -102,8 +98,7 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
-    public func incrementYear(sender: AnyObject) {
+    public func incrementYear() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
 
@@ -114,8 +109,7 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
-    public func decrementYear(sender: AnyObject) {
+    public func decrementYear() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
 
@@ -126,7 +120,8 @@ public class BirthdayViewModel: NSObject {
         }
     }
 
-    @objc
+    //MARK: Save Properties
+
     public func saveBirthdayIntoUserDefaults(userDefaults: NSUserDefaults) {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let birthdayComponents = NSDateComponents()
