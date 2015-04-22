@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var window: UIWindow? = {
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window.backgroundColor = UIColor.whiteColor()
+        window.backgroundColor = .whiteColor()
         window.rootViewController = NavigationController(rootViewController: AgeViewController())
 
         return window
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
 
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().tintColor = .whiteColor()
 
         self.window?.makeKeyAndVisible()
 

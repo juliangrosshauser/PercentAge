@@ -42,7 +42,7 @@ public class AgeViewController: UIViewController {
 
         self.ageLabel.textAlignment = .Center
         self.ageLabel.font = UIFont(name: "Avenir Next", size: 36)
-        self.ageLabel.textColor = UIColor.whiteColor()
+        self.ageLabel.textColor = .whiteColor()
 
         self.view.addSubview(self.ageLabel)
 
