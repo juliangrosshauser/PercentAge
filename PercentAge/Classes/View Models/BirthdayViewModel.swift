@@ -55,12 +55,16 @@ public class BirthdayViewModel: NSObject {
     public func incrementDay() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let dateComponents = NSDateComponents()
+        let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
 
         dateComponents.month = self.month
         dateComponents.year = self.year
         let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
 
-        if (self.day == dayRange.length) {
+        if (todayComponents.year == self.year &&
+            todayComponents.month == self.month &&
+            todayComponents.day == self.day ||
+            self.day == dayRange.length) {
             self.day = 1
         } else {
             self.day++
@@ -76,14 +80,25 @@ public class BirthdayViewModel: NSObject {
         let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
 
         if (self.day == 1) {
-            self.day = dayRange.length
+            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+
+            if (todayComponents.year == self.year && todayComponents.month == self.month) {
+                self.day = todayComponents.day
+            } else {
+                self.day = dayRange.length
+            }
         } else {
             self.day--
         }
     }
 
     public func incrementMonth() {
-        if (self.month == 12) {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let currentMonthComponents = calendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+
+        if (currentMonthComponents.year == self.year &&
+            currentMonthComponents.month == self.month ||
+            self.month == 12) {
             self.month = 1
         } else {
             self.month++
@@ -91,8 +106,15 @@ public class BirthdayViewModel: NSObject {
     }
 
     public func decrementMonth() {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let currentMonthComponents = calendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+
         if (self.month == 1) {
-            self.month = 12
+            if (currentMonthComponents.year == self.year) {
+                self.month = currentMonthComponents.month
+            } else {
+                self.month = 12
+            }
         } else {
             self.month--
         }
