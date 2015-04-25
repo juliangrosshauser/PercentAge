@@ -14,6 +14,8 @@ class BirthdayViewModelSpec: QuickSpec {
 
     override func spec() {
         describe("BirthdayViewModel") {
+            let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+
             describe("incrementDay") {
                 context("day value is at bottom limit") {
                     it("increments day value") {
@@ -127,6 +129,19 @@ class BirthdayViewModelSpec: QuickSpec {
                             expect(birthdayViewModel.day).to(equal(1))
                         }
                     }
+
+                    context("upper limit is today") {
+                        it("sets day value to bottom limit") {
+                            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+                            let birthdayViewModel = BirthdayViewModel(day: todayComponents.day, month: todayComponents.month, year: todayComponents.year)
+
+                            birthdayViewModel.incrementDay()
+
+                            expect(birthdayViewModel.day).to(equal(1))
+                            expect(birthdayViewModel.month).to(equal(todayComponents.month))
+                            expect(birthdayViewModel.year).to(equal(todayComponents.year))
+                        }
+                    }
                 }
             }
 
@@ -235,6 +250,19 @@ class BirthdayViewModelSpec: QuickSpec {
                             expect(birthdayViewModel.day).to(equal(31))
                         }
                     }
+
+                    context("upper limit is today") {
+                        it("sets day value to upper limit") {
+                            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+                            let birthdayViewModel = BirthdayViewModel(day: 1, month: todayComponents.month, year: todayComponents.year)
+
+                            birthdayViewModel.decrementDay()
+
+                            expect(birthdayViewModel.day).to(equal(todayComponents.day))
+                            expect(birthdayViewModel.month).to(equal(todayComponents.month))
+                            expect(birthdayViewModel.year).to(equal(todayComponents.year))
+                        }
+                    }
                 }
 
                 context("day value is at upper limit") {
@@ -261,6 +289,19 @@ class BirthdayViewModelSpec: QuickSpec {
                         birthdayViewModel.incrementMonth()
                         expect(birthdayViewModel.month).to(equal(1))
                     }
+
+                    context("upper limit is today") {
+                        it("sets month value to bottom limit") {
+                            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+                            let birthdayViewModel = BirthdayViewModel(day: todayComponents.day, month: todayComponents.month, year: todayComponents.year)
+
+                            birthdayViewModel.incrementMonth()
+
+                            expect(birthdayViewModel.day).to(equal(todayComponents.day))
+                            expect(birthdayViewModel.month).to(equal(1))
+                            expect(birthdayViewModel.year).to(equal(todayComponents.year))
+                        }
+                    }
                 }
             }
 
@@ -270,6 +311,19 @@ class BirthdayViewModelSpec: QuickSpec {
                         let birthdayViewModel = BirthdayViewModel(day: 1, month: 1, year: 2015)
                         birthdayViewModel.decrementMonth()
                         expect(birthdayViewModel.month).to(equal(12))
+                    }
+
+                    context("upper limit is today") {
+                        it("sets month value to upper limit") {
+                            let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
+                            let birthdayViewModel = BirthdayViewModel(day: todayComponents.day, month: 1, year: todayComponents.year)
+
+                            birthdayViewModel.decrementMonth()
+
+                            expect(birthdayViewModel.day).to(equal(todayComponents.day))
+                            expect(birthdayViewModel.month).to(equal(todayComponents.month))
+                            expect(birthdayViewModel.year).to(equal(todayComponents.year))
+                        }
                     }
                 }
 
@@ -307,7 +361,6 @@ class BirthdayViewModelSpec: QuickSpec {
                 var currentYear: Int!
 
                 beforeEach {
-                    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
                     currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
                 }
 
