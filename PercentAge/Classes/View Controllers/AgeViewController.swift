@@ -12,8 +12,11 @@ public class AgeViewController: UIViewController {
 
     //MARK: Properties
 
-    let ageLabel = UILabel()
     let viewModel = AgeViewModel()
+
+    let ageLabel = UILabel()
+    let preAgeLabel = UILabel()
+    let postAgeLabel = UILabel()
 
     //MARK: UIViewController
 
@@ -28,7 +31,6 @@ public class AgeViewController: UIViewController {
             ageLabel.text = NSString(format: "%.2f", age) as String
 
             ageLabel.sizeToFit()
-            ageLabel.center = view.center
         } else {
             presentViewController(BirthdayViewController(), animated: false, completion: nil)
         }
@@ -46,33 +48,40 @@ public class AgeViewController: UIViewController {
 
         view.addSubview(ageLabel)
 
-        let preAgeLabel = UILabel()
         preAgeLabel.text = "You are"
         preAgeLabel.textAlignment = .Center
         preAgeLabel.font = UIFont(name: "Avenir Next", size: 20)
         preAgeLabel.textColor = .whiteColor()
         preAgeLabel.sizeToFit()
-        preAgeLabel.center.x = view.center.x - 100
-        preAgeLabel.center.y = view.center.y
 
         view.addSubview(preAgeLabel)
 
-        let postAgeLabel = UILabel()
         postAgeLabel.text = "years old."
         postAgeLabel.textAlignment = .Center
         postAgeLabel.font = UIFont(name: "Avenir Next", size: 20)
         postAgeLabel.textColor = .whiteColor()
         postAgeLabel.sizeToFit()
-        postAgeLabel.center.x = view.center.x + 100
-        postAgeLabel.center.y = view.center.y
 
         view.addSubview(postAgeLabel)
 
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(origin: CGPointZero, size: view.bounds.size)
         let gradientColors = [UIColor(red:0.24, green:0.49, blue:0.82, alpha:1).CGColor, UIColor(red:0.14, green:0.82, blue:0.99, alpha:1).CGColor]
         gradientLayer.colors = gradientColors
         view.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+
+    override public func viewWillLayoutSubviews() {
+        ageLabel.center = view.center
+
+        preAgeLabel.center.x = view.center.x - 100
+        preAgeLabel.center.y = view.center.y
+
+        postAgeLabel.center.x = view.center.x + 100
+        postAgeLabel.center.y = view.center.y
+
+        if let gradientLayer = view.layer.sublayers[0] as? CAGradientLayer {
+            gradientLayer.frame = view.frame
+        }
     }
 
     //MARK: Settings
