@@ -12,11 +12,11 @@ public class AgeViewController: UIViewController {
 
     //MARK: Properties
 
-    let viewModel = AgeViewModel()
+    private let viewModel = AgeViewModel()
 
-    let ageLabel = UILabel()
-    let preAgeLabel = UILabel()
-    let postAgeLabel = UILabel()
+    private let ageLabel = UILabel()
+    private let preAgeLabel = UILabel()
+    private let postAgeLabel = UILabel()
 
     //MARK: UIViewController
 
