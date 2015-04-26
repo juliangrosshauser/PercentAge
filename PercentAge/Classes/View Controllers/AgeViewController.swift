@@ -12,8 +12,8 @@ public class AgeViewController: UIViewController {
 
     //MARK: Properties
 
-    var ageLabel = UILabel()
-    var viewModel = AgeViewModel()
+    let ageLabel = UILabel()
+    let viewModel = AgeViewModel()
 
     //MARK: UIViewController
 
