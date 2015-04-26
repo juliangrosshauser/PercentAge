@@ -23,14 +23,14 @@ public class AgeViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
 
         if let birthday = defaults.objectForKey("birthday") as? NSDate {
-            let age = self.viewModel.ageInPercent(birthday: birthday, today: NSDate())
+            let age = viewModel.ageInPercent(birthday: birthday, today: NSDate())
 
-            self.ageLabel.text = NSString(format: "%.2f", age) as String
+            ageLabel.text = NSString(format: "%.2f", age) as String
 
-            self.ageLabel.sizeToFit()
-            self.ageLabel.center = self.view.center
+            ageLabel.sizeToFit()
+            ageLabel.center = view.center
         } else {
-            self.presentViewController(BirthdayViewController(), animated: false, completion: nil)
+            presentViewController(BirthdayViewController(), animated: false, completion: nil)
         }
     }
 
@@ -38,26 +38,26 @@ public class AgeViewController: UIViewController {
         super.viewDidLoad()
 
         let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
-        self.navigationItem.leftBarButtonItem = calendarButton
+        navigationItem.leftBarButtonItem = calendarButton
 
-        self.ageLabel.textAlignment = .Center
-        self.ageLabel.font = UIFont(name: "Avenir Next", size: 36)
-        self.ageLabel.textColor = .whiteColor()
+        ageLabel.textAlignment = .Center
+        ageLabel.font = UIFont(name: "Avenir Next", size: 36)
+        ageLabel.textColor = .whiteColor()
 
-        self.view.addSubview(self.ageLabel)
+        view.addSubview(ageLabel)
 
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(origin: CGPointZero, size: self.view.bounds.size)
+        gradientLayer.frame = CGRect(origin: CGPointZero, size: view.bounds.size)
         let gradientColors = [UIColor(red:0.24, green:0.49, blue:0.82, alpha:1).CGColor, UIColor(red:0.14, green:0.82, blue:0.99, alpha:1).CGColor]
         gradientLayer.colors = gradientColors
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
     //MARK: Settings
 
     @objc
     private func showBirthdaySettings(sender: AnyObject) {
-        self.presentViewController(BirthdayViewController(), animated: true, completion: nil)
+        presentViewController(BirthdayViewController(), animated: true, completion: nil)
     }
 }
 

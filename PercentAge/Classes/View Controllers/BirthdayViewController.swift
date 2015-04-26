@@ -20,9 +20,9 @@ class BirthdayViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        self.viewModel.addObserver(self, forKeyPath: "day", options: .New, context: &BirthdayViewModel.observeContext)
-        self.viewModel.addObserver(self, forKeyPath: "month", options: .New, context: &BirthdayViewModel.observeContext)
-        self.viewModel.addObserver(self, forKeyPath: "year", options: .New, context: &BirthdayViewModel.observeContext)
+        viewModel.addObserver(self, forKeyPath: "day", options: .New, context: &BirthdayViewModel.observeContext)
+        viewModel.addObserver(self, forKeyPath: "month", options: .New, context: &BirthdayViewModel.observeContext)
+        viewModel.addObserver(self, forKeyPath: "year", options: .New, context: &BirthdayViewModel.observeContext)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -32,9 +32,9 @@ class BirthdayViewController: UIViewController {
     //MARK: Deinitialization
 
     deinit {
-        self.viewModel.removeObserver(self, forKeyPath: "day", context: &BirthdayViewModel.observeContext)
-        self.viewModel.removeObserver(self, forKeyPath: "month", context: &BirthdayViewModel.observeContext)
-        self.viewModel.removeObserver(self, forKeyPath: "year", context: &BirthdayViewModel.observeContext)
+        viewModel.removeObserver(self, forKeyPath: "day", context: &BirthdayViewModel.observeContext)
+        viewModel.removeObserver(self, forKeyPath: "month", context: &BirthdayViewModel.observeContext)
+        viewModel.removeObserver(self, forKeyPath: "year", context: &BirthdayViewModel.observeContext)
     }
 
     //MARK: Key-Value Observing
@@ -42,7 +42,7 @@ class BirthdayViewController: UIViewController {
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         if (context == &BirthdayViewModel.observeContext) {
             if let newValue = change[NSKeyValueChangeNewKey] as? Int {
-                let birthdayView = self.view as! BirthdayView
+                let birthdayView = view as! BirthdayView
 
                 switch keyPath {
                     case "day":
@@ -68,17 +68,17 @@ class BirthdayViewController: UIViewController {
     //MARK: UIViewController
 
     override func loadView() {
-        self.view = BirthdayView()
+        view = BirthdayView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let birthdayView = self.view as! BirthdayView
+        let birthdayView = view as! BirthdayView
 
-        birthdayView.dayValueLabel.text = String(self.viewModel.day)
-        birthdayView.monthValueLabel.text = String(self.viewModel.month)
-        birthdayView.yearValueLabel.text = String(self.viewModel.year)
+        birthdayView.dayValueLabel.text = String(viewModel.day)
+        birthdayView.monthValueLabel.text = String(viewModel.month)
+        birthdayView.yearValueLabel.text = String(viewModel.year)
 
         birthdayView.incrementDayButton.addTarget(self, action: "incrementDayButtonDown:", forControlEvents: .TouchDown)
         birthdayView.incrementDayButton.addTarget(self, action: "resetButtonTransform:", forControlEvents: .TouchUpInside)
@@ -129,44 +129,44 @@ class BirthdayViewController: UIViewController {
 
     @objc
     private func incrementDayButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.incrementDay()
+        tranformButton(sender)
+        viewModel.incrementDay()
     }
 
     @objc
     private func decrementDayButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.decrementDay()
+        tranformButton(sender)
+        viewModel.decrementDay()
     }
 
     @objc
     private func incrementMonthButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.incrementMonth()
+        tranformButton(sender)
+        viewModel.incrementMonth()
     }
 
     @objc
     private func decrementMonthButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.decrementMonth()
+        tranformButton(sender)
+        viewModel.decrementMonth()
     }
 
     @objc
     private func incrementYearButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.incrementYear()
+        tranformButton(sender)
+        viewModel.incrementYear()
     }
 
     @objc
     private func decrementYearButtonDown(sender: UIButton) {
-        self.tranformButton(sender)
-        self.viewModel.decrementYear()
+        tranformButton(sender)
+        viewModel.decrementYear()
     }
 
     @objc
     private func saveBirthday(sender: AnyObject) {
-        self.viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     //MARK: Gesture Recognizer Actions
@@ -174,84 +174,84 @@ class BirthdayViewController: UIViewController {
     @objc
     private func longPressIncrementDay(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementDay", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "incrementDay", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.incrementDayButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.incrementDayButton)
         }
     }
 
     @objc
     private func longPressIncrementMonth(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementMonth", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "incrementMonth", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.incrementMonthButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.incrementMonthButton)
         }
     }
 
     @objc
     private func longPressIncrementYear(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "incrementYear", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "incrementYear", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.incrementYearButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.incrementYearButton)
         }
     }
 
     @objc
     private func longPressDecrementDay(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementDay", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "decrementDay", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.decrementDayButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.decrementDayButton)
         }
     }
 
     @objc
     private func longPressDecrementMonth(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementMonth", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "decrementMonth", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.decrementMonthButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.decrementMonthButton)
         }
     }
 
     @objc
     private func longPressDecrementYear(longPressGestureRecognizer: UILongPressGestureRecognizer) {
         if (longPressGestureRecognizer.state == .Began) {
-            self.longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self.viewModel, selector: "decrementYear", userInfo: nil, repeats: true)
+            longPressTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: viewModel, selector: "decrementYear", userInfo: nil, repeats: true)
         }
 
         if (longPressGestureRecognizer.state == .Ended) {
-            self.longPressTimer?.invalidate()
+            longPressTimer?.invalidate()
 
-            let birthdayView = self.view as! BirthdayView
-            self.resetButtonTransform(birthdayView.decrementYearButton)
+            let birthdayView = view as! BirthdayView
+            resetButtonTransform(birthdayView.decrementYearButton)
         }
     }
 

@@ -38,12 +38,12 @@ public class AgeViewModel {
             return Float(years)
         }
 
-        let dayDifference = self.dayDifference(before: birthdayCurrentYear, after: today)
+        let difference = dayDifference(before: birthdayCurrentYear, after: today)
 
         var percent: Float!
 
-        // dayDifference is negative if birthdayCurrentYear is after today
-        if (dayDifference < 0) {
+        // difference is negative if birthdayCurrentYear is after today
+        if (difference < 0) {
             let birthdayLastYearComponents = NSDateComponents()
             birthdayLastYearComponents.day = birthdayDay
             birthdayLastYearComponents.month = birthdayMonth
@@ -51,8 +51,8 @@ public class AgeViewModel {
 
             let birthdayLastYear = calendar.dateFromComponents(birthdayLastYearComponents)!
 
-            let daysBetweenBirthdays = self.dayDifference(before: birthdayLastYear, after: birthdayCurrentYear)
-            let daysSinceBirthday = self.dayDifference(before: birthdayLastYear, after: today)
+            let daysBetweenBirthdays = dayDifference(before: birthdayLastYear, after: birthdayCurrentYear)
+            let daysSinceBirthday = dayDifference(before: birthdayLastYear, after: today)
 
             let onePercent = Float(daysBetweenBirthdays) / Float(100);
             percent = Float(daysSinceBirthday) / onePercent / 100;
@@ -64,8 +64,8 @@ public class AgeViewModel {
 
             let birthdayNextYear = calendar.dateFromComponents(birthdayNextYearComponents)!
 
-            let daysBetweenBirthdays = self.dayDifference(before: birthdayCurrentYear, after: birthdayNextYear)
-            let daysSinceBirthday = self.dayDifference(before: birthdayCurrentYear, after: today)
+            let daysBetweenBirthdays = dayDifference(before: birthdayCurrentYear, after: birthdayNextYear)
+            let daysSinceBirthday = dayDifference(before: birthdayCurrentYear, after: today)
 
             let onePercent = Float(daysBetweenBirthdays) / Float(100);
             percent = Float(daysSinceBirthday) / onePercent / 100;

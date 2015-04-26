@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UINavigationBar.appearance().tintColor = .whiteColor()
 
-        self.window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
 
         return true
     }

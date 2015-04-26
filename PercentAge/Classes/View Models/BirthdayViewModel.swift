@@ -57,17 +57,17 @@ public class BirthdayViewModel: NSObject {
         let dateComponents = NSDateComponents()
         let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
 
-        dateComponents.month = self.month
-        dateComponents.year = self.year
+        dateComponents.month = month
+        dateComponents.year = year
         let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
 
-        if (todayComponents.year == self.year &&
-            todayComponents.month == self.month &&
-            todayComponents.day == self.day ||
-            self.day == dayRange.length) {
-            self.day = 1
+        if (todayComponents.year == year &&
+            todayComponents.month == month &&
+            todayComponents.day == day ||
+            day == dayRange.length) {
+            day = 1
         } else {
-            self.day++
+            day++
         }
     }
 
@@ -75,20 +75,20 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let dateComponents = NSDateComponents()
 
-        dateComponents.month = self.month
-        dateComponents.year = self.year
+        dateComponents.month = month
+        dateComponents.year = year
         let dayRange = calendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: calendar.dateFromComponents(dateComponents)!)
 
-        if (self.day == 1) {
+        if (day == 1) {
             let todayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
 
-            if (todayComponents.year == self.year && todayComponents.month == self.month) {
-                self.day = todayComponents.day
+            if (todayComponents.year == year && todayComponents.month == month) {
+                day = todayComponents.day
             } else {
-                self.day = dayRange.length
+                day = dayRange.length
             }
         } else {
-            self.day--
+            day--
         }
     }
 
@@ -96,12 +96,12 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentMonthComponents = calendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
 
-        if (currentMonthComponents.year == self.year &&
-            currentMonthComponents.month == self.month ||
-            self.month == 12) {
-            self.month = 1
+        if (currentMonthComponents.year == year &&
+            currentMonthComponents.month == month ||
+            month == 12) {
+            month = 1
         } else {
-            self.month++
+            month++
         }
     }
 
@@ -109,14 +109,14 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentMonthComponents = calendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate())
 
-        if (self.month == 1) {
-            if (currentMonthComponents.year == self.year) {
-                self.month = currentMonthComponents.month
+        if (month == 1) {
+            if (currentMonthComponents.year == year) {
+                month = currentMonthComponents.month
             } else {
-                self.month = 12
+                month = 12
             }
         } else {
-            self.month--
+            month--
         }
     }
 
@@ -124,10 +124,10 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
 
-        if (self.year == currentYear) {
-            self.year = 1900
+        if (year == currentYear) {
+            year = 1900
         } else {
-            self.year++
+            year++
         }
     }
 
@@ -135,10 +135,10 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let currentYear = calendar.component(.CalendarUnitYear, fromDate: NSDate())
 
-        if (self.year == 1900) {
-            self.year = currentYear
+        if (year == 1900) {
+            year = currentYear
         } else {
-            self.year--
+            year--
         }
     }
 
@@ -148,9 +148,9 @@ public class BirthdayViewModel: NSObject {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let birthdayComponents = NSDateComponents()
 
-        birthdayComponents.day = self.day
-        birthdayComponents.month = self.month
-        birthdayComponents.year = self.year
+        birthdayComponents.day = day
+        birthdayComponents.month = month
+        birthdayComponents.year = year
 
         let birthday = calendar.dateFromComponents(birthdayComponents)
 
