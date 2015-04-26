@@ -12,7 +12,7 @@ class BirthdayViewController: UIViewController {
 
     //MARK: Properties
 
-    private var viewModel = BirthdayViewModel()
+    private let viewModel = BirthdayViewModel()
     private var longPressTimer: NSTimer?
 
     //MARK: Initialization
