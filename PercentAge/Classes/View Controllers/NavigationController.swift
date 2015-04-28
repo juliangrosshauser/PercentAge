@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class NavigationController: UINavigationController {
+class NavigationController: UINavigationController {
 
-    override public func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
 }

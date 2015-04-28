@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AgeViewController: UIViewController {
+class AgeViewController: UIViewController {
 
     //MARK: Properties
 
@@ -20,7 +20,7 @@ public class AgeViewController: UIViewController {
 
     //MARK: UIViewController
 
-    override public func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -36,7 +36,7 @@ public class AgeViewController: UIViewController {
         }
     }
 
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
@@ -70,7 +70,7 @@ public class AgeViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, atIndex: 0)
     }
 
-    override public func viewWillLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
         ageLabel.center = view.center
 
         preAgeLabel.center.x = view.center.x - 100
