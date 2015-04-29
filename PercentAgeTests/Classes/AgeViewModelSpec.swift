@@ -20,7 +20,7 @@ class AgeViewModelSpec: QuickSpec {
             dateFormatter.dateFormat = "dd-MM-yyyy"
         }
 
-        describe("ageViewModel") {
+        describe("AgeViewModel") {
             var ageViewModel: AgeViewModel!
 
             beforeEach {
