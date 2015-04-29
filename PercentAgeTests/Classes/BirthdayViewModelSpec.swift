@@ -16,6 +16,8 @@ class BirthdayViewModelSpec: QuickSpec {
         describe("BirthdayViewModel") {
             let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
 
+            //MARK: incrementDay
+
             describe("incrementDay") {
                 context("day value is at bottom limit") {
                     it("increments day value") {
@@ -144,6 +146,8 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            //MARK: decrementDay
 
             describe("decrementDay") {
                 context("day value is at bottom limit") {
@@ -274,6 +278,8 @@ class BirthdayViewModelSpec: QuickSpec {
                 }
             }
 
+            //MARK: incrementMonth
+
             describe("incrementMonth") {
                 context("month value is at bottom limit") {
                     it("increments month value") {
@@ -304,6 +310,8 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            //MARK: decrementMonth
 
             describe("decrementMonth") {
                 context("month value is at bottom limit") {
@@ -336,6 +344,8 @@ class BirthdayViewModelSpec: QuickSpec {
                 }
             }
 
+            //MARK: incrementYear
+
             describe("incrementYear") {
                 context("year value is at bottom limit") {
                     it("increments year value") {
@@ -356,6 +366,8 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            //MARK: decrementYear
 
             describe("decrementYear") {
                 var currentYear: Int!
@@ -380,6 +392,8 @@ class BirthdayViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            //MARK: saveBirthday
 
             describe("saveBirthday") {
                 var userDefaults: NSUserDefaults!
