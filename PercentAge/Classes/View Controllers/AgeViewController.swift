@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PercentAgeKit
 
 class AgeViewController: UIViewController {
 

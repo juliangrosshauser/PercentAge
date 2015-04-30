@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-import PercentAge
+import PercentAgeKit
 
 class BirthdayViewModelSpec: QuickSpec {
 
