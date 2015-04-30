@@ -24,6 +24,8 @@ class BirthdayViewController: UIViewController {
         viewModel.addObserver(self, forKeyPath: "day", options: .New, context: &BirthdayViewModel.observeContext)
         viewModel.addObserver(self, forKeyPath: "month", options: .New, context: &BirthdayViewModel.observeContext)
         viewModel.addObserver(self, forKeyPath: "year", options: .New, context: &BirthdayViewModel.observeContext)
+
+        modalTransitionStyle = .CrossDissolve
     }
 
     required init(coder aDecoder: NSCoder) {
