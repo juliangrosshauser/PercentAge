@@ -1,6 +1,6 @@
 //
 //  AgeViewModelSpec.swift
-//  PercentAgeTests
+//  PercentAgeKitTests
 //
 //  Created by Julian Grosshauser on 14/03/15.
 //  Copyright (c) 2015 Julian Grosshauser. All rights reserved.
