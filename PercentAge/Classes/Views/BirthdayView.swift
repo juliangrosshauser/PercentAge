@@ -16,9 +16,23 @@ class BirthdayView: UIView {
     let monthValueLabel = UILabel()
     let yearValueLabel = UILabel()
 
-    private let dayTitleLabel = UILabel()
-    private let monthTitleLabel = UILabel()
-    private let yearTitleLabel = UILabel()
+    private let dayTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Day"
+        return label
+    }()
+
+    private let monthTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Month"
+        return label
+    }()
+
+    private let yearTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Year"
+        return label
+    }()
 
     let incrementDayButton = UIButton()
     let decrementDayButton = UIButton()
@@ -27,7 +41,15 @@ class BirthdayView: UIView {
     let incrementYearButton = UIButton()
     let decrementYearButton = UIButton()
 
-    let saveButton = UIButton()
+    let saveButton: UIButton = {
+        let button = UIButton()
+
+        button.setTranslatesAutoresizingMaskIntoConstraints(false)
+        button.backgroundColor = UIColor(red:0.035, green:0.678, blue:0.066, alpha:1)
+        button.setTitle("Save", forState: .Normal)
+
+        return button
+    }()
 
     //MARK: Initialization
 
@@ -56,10 +78,6 @@ class BirthdayView: UIView {
             titleLabel.textColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:1)
         }
 
-        dayTitleLabel.text = "Day"
-        monthTitleLabel.text = "Month"
-        yearTitleLabel.text = "Year"
-
         let buttons = [incrementDayButton, decrementDayButton, incrementMonthButton, decrementMonthButton, incrementYearButton, decrementYearButton]
 
         for button in buttons {
@@ -81,9 +99,6 @@ class BirthdayView: UIView {
             decrementButton.setImage(UIImage(named: "Minus Button"), forState: .Highlighted)
         }
 
-        saveButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        saveButton.backgroundColor = UIColor(red:0.035, green:0.678, blue:0.066, alpha:1)
-        saveButton.setTitle("Save", forState: .Normal)
         addSubview(saveButton)
 
         addConstraint(NSLayoutConstraint(item: dayValueLabel, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 30))

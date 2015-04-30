@@ -15,9 +15,39 @@ class AgeViewController: UIViewController {
 
     private let viewModel = AgeViewModel()
 
-    private let ageLabel = UILabel()
-    private let preAgeLabel = UILabel()
-    private let postAgeLabel = UILabel()
+    private let ageLabel: UILabel = {
+        let label = UILabel()
+
+        label.textAlignment = .Center
+        label.font = UIFont(name: "Avenir Next", size: 36)
+        label.textColor = .whiteColor()
+
+        return label
+    }()
+
+    private let preAgeLabel: UILabel = {
+        let label = UILabel()
+
+        label.text = "You are"
+        label.textAlignment = .Center
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.textColor = .whiteColor()
+        label.sizeToFit()
+
+        return label
+    }()
+
+    private let postAgeLabel: UILabel = {
+        let label = UILabel()
+
+        label.text = "years old."
+        label.textAlignment = .Center
+        label.font = UIFont(name: "Avenir Next", size: 20)
+        label.textColor = .whiteColor()
+        label.sizeToFit()
+
+        return label
+    }()
 
     //MARK: UIViewController
 
@@ -43,26 +73,8 @@ class AgeViewController: UIViewController {
         let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
         navigationItem.leftBarButtonItem = calendarButton
 
-        ageLabel.textAlignment = .Center
-        ageLabel.font = UIFont(name: "Avenir Next", size: 36)
-        ageLabel.textColor = .whiteColor()
-
         view.addSubview(ageLabel)
-
-        preAgeLabel.text = "You are"
-        preAgeLabel.textAlignment = .Center
-        preAgeLabel.font = UIFont(name: "Avenir Next", size: 20)
-        preAgeLabel.textColor = .whiteColor()
-        preAgeLabel.sizeToFit()
-
         view.addSubview(preAgeLabel)
-
-        postAgeLabel.text = "years old."
-        postAgeLabel.textAlignment = .Center
-        postAgeLabel.font = UIFont(name: "Avenir Next", size: 20)
-        postAgeLabel.textColor = .whiteColor()
-        postAgeLabel.sizeToFit()
-
         view.addSubview(postAgeLabel)
 
         let gradientLayer = CAGradientLayer()
