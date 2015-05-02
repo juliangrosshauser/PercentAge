@@ -25,7 +25,6 @@
 		B92E6E7F1AE060C300CB60A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E751AE060C300CB60A7 /* Images.xcassets */; };
 		B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9A95F1AF03315001C248B /* NotificationCenter.framework */; };
 		B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9A9641AF03315001C248B /* TodayViewController.swift */; };
-		B9B9A9671AF03315001C248B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B9A9661AF03315001C248B /* MainInterface.storyboard */; };
 		B9B9A96A1AF03315001C248B /* PercentAgeTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -121,7 +120,6 @@
 		B9B9A95F1AF03315001C248B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		B9B9A9631AF03315001C248B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B9A9641AF03315001C248B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		B9B9A9661AF03315001C248B /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		D19B6AABA10544C210485A13 /* Pods_PercentAgeKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PercentAgeKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PercentAgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -339,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				B9B9A9641AF03315001C248B /* TodayViewController.swift */,
-				B9B9A9661AF03315001C248B /* MainInterface.storyboard */,
 				B9B9A9621AF03315001C248B /* Supporting Files */,
 			);
 			path = PercentAgeTodayExtension;
@@ -569,7 +566,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B9A9671AF03315001C248B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

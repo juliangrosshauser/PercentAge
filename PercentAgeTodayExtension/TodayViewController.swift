@@ -9,6 +9,8 @@
 import UIKit
 import NotificationCenter
 
+@objc(TodayViewController)
+
 class TodayViewController: UIViewController {
         
     override func viewDidLoad() {
