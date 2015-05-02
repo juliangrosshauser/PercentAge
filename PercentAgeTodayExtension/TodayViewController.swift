@@ -15,6 +15,8 @@ class TodayViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        preferredContentSize = CGSize(width: 0, height: 50)
     }
 }
 
