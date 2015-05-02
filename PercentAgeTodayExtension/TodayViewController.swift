@@ -9,14 +9,16 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+}
+
+extension TodayViewController: NCWidgetProviding {
+
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         completionHandler(.NoData)
     }
-    
 }
