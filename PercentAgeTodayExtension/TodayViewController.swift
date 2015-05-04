@@ -14,6 +14,8 @@ import PercentAgeKit
 
 class TodayViewController: UIViewController {
 
+    private let viewModel = AgeViewModel()
+
     override func loadView() {
         view = TodayView()
     }
