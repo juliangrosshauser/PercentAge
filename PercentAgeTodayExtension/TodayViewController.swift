@@ -14,7 +14,11 @@ import PercentAgeKit
 
 class TodayViewController: UIViewController {
 
+    //MARK: Properties
+
     private let viewModel = AgeViewModel()
+
+    //MARK: UIViewController
 
     override func loadView() {
         view = TodayView()
@@ -26,6 +30,8 @@ class TodayViewController: UIViewController {
         preferredContentSize = CGSize(width: 0, height: 50)
     }
 }
+
+//MARK: NCWidgetProviding
 
 extension TodayViewController: NCWidgetProviding {
 
