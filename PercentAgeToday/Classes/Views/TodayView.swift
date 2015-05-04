@@ -1,6 +1,6 @@
 //
 //  TodayView.swift
-//  PercentAge
+//  PercentAgeToday
 //
 //  Created by Julian Grosshauser on 02/05/15.
 //  Copyright (c) 2015 Julian Grosshauser. All rights reserved.

@@ -23,10 +23,10 @@
 		B92E6E7D1AE060C300CB60A7 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E711AE060C300CB60A7 /* BirthdayView.swift */; };
 		B92E6E7E1AE060C300CB60A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E731AE060C300CB60A7 /* LaunchScreen.xib */; };
 		B92E6E7F1AE060C300CB60A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E751AE060C300CB60A7 /* Images.xcassets */; };
-		B959982C1AF43A8A00343FE2 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959982B1AF43A8A00343FE2 /* TodayView.swift */; };
+		B9B0AFCA1AF819B40058A64E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0AFC51AF819B40058A64E /* TodayViewController.swift */; };
+		B9B0AFCB1AF819B40058A64E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0AFC71AF819B40058A64E /* TodayView.swift */; };
 		B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9A95F1AF03315001C248B /* NotificationCenter.framework */; };
-		B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9A9641AF03315001C248B /* TodayViewController.swift */; };
-		B9B9A96A1AF03315001C248B /* PercentAgeTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B9B9A96A1AF03315001C248B /* PercentAgeToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B9FD70D41AF8124F00C7D0A8 /* PercentAgeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91340F91AF2D3A2007EE539 /* PercentAgeKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B9B9A96A1AF03315001C248B /* PercentAgeTodayExtension.appex in Embed App Extensions */,
+				B9B9A96A1AF03315001C248B /* PercentAgeToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,11 +118,11 @@
 		B92E6E861AE060CB00CB60A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B946B0AA1AB4A01300D0A599 /* PercentAge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PercentAge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PercentAgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B959982B1AF43A8A00343FE2 /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PercentAgeTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B0AFC51AF819B40058A64E /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B9B0AFC71AF819B40058A64E /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		B9B0AFC91AF819B40058A64E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PercentAgeToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B9A95F1AF03315001C248B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		B9B9A9631AF03315001C248B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9B9A9641AF03315001C248B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D19B6AABA10544C210485A13 /* Pods_PercentAgeKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PercentAgeKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PercentAgeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -318,7 +318,7 @@
 				B92E6E811AE060CB00CB60A7 /* PercentAgeTests */,
 				B91340FA1AF2D3A2007EE539 /* PercentAgeKit */,
 				B91341091AF2D3A2007EE539 /* PercentAgeKitTests */,
-				B9B9A9611AF03315001C248B /* PercentAgeTodayExtension */,
+				B9B0AFC21AF819B40058A64E /* PercentAgeToday */,
 				B946B0AB1AB4A01300D0A599 /* Products */,
 				D146B013C28A2E567460661B /* Frameworks */,
 				EB6218B0A4303157707E96CD /* Pods */,
@@ -330,29 +330,53 @@
 			children = (
 				B946B0AA1AB4A01300D0A599 /* PercentAge.app */,
 				B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */,
-				B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */,
+				B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */,
 				B91340F91AF2D3A2007EE539 /* PercentAgeKit.framework */,
 				B91341031AF2D3A2007EE539 /* PercentAgeKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B9B9A9611AF03315001C248B /* PercentAgeTodayExtension */ = {
+		B9B0AFC21AF819B40058A64E /* PercentAgeToday */ = {
 			isa = PBXGroup;
 			children = (
-				B9B9A9641AF03315001C248B /* TodayViewController.swift */,
-				B959982B1AF43A8A00343FE2 /* TodayView.swift */,
-				B9B9A9621AF03315001C248B /* Supporting Files */,
+				B9B0AFC31AF819B40058A64E /* Classes */,
+				B9B0AFC81AF819B40058A64E /* Resources */,
 			);
-			path = PercentAgeTodayExtension;
+			path = PercentAgeToday;
 			sourceTree = "<group>";
 		};
-		B9B9A9621AF03315001C248B /* Supporting Files */ = {
+		B9B0AFC31AF819B40058A64E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B9B9A9631AF03315001C248B /* Info.plist */,
+				B9B0AFC41AF819B40058A64E /* View Controllers */,
+				B9B0AFC61AF819B40058A64E /* Views */,
 			);
-			name = "Supporting Files";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B9B0AFC41AF819B40058A64E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0AFC51AF819B40058A64E /* TodayViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B9B0AFC61AF819B40058A64E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0AFC71AF819B40058A64E /* TodayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9B0AFC81AF819B40058A64E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0AFC91AF819B40058A64E /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D146B013C28A2E567460661B /* Frameworks */ = {
@@ -469,9 +493,9 @@
 			productReference = B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B9B9A95D1AF03315001C248B /* PercentAgeTodayExtension */ = {
+		B9B9A95D1AF03315001C248B /* PercentAgeToday */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9B9A96D1AF03315001C248B /* Build configuration list for PBXNativeTarget "PercentAgeTodayExtension" */;
+			buildConfigurationList = B9B9A96D1AF03315001C248B /* Build configuration list for PBXNativeTarget "PercentAgeToday" */;
 			buildPhases = (
 				B9B9A95A1AF03315001C248B /* Sources */,
 				B9B9A95B1AF03315001C248B /* Frameworks */,
@@ -481,9 +505,9 @@
 			);
 			dependencies = (
 			);
-			name = PercentAgeTodayExtension;
+			name = PercentAgeToday;
 			productName = PercentAgeTodayExtension;
-			productReference = B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */;
+			productReference = B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -531,7 +555,7 @@
 				B946B0BE1AB4A01300D0A599 /* PercentAgeTests */,
 				B91340F81AF2D3A2007EE539 /* PercentAgeKit */,
 				B91341021AF2D3A2007EE539 /* PercentAgeKitTests */,
-				B9B9A95D1AF03315001C248B /* PercentAgeTodayExtension */,
+				B9B9A95D1AF03315001C248B /* PercentAgeToday */,
 			);
 		};
 /* End PBXProject section */
@@ -666,8 +690,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B959982C1AF43A8A00343FE2 /* TodayView.swift in Sources */,
-				B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */,
+				B9B0AFCB1AF819B40058A64E /* TodayView.swift in Sources */,
+				B9B0AFCA1AF819B40058A64E /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +720,7 @@
 		};
 		B9B9A9691AF03315001C248B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B9B9A95D1AF03315001C248B /* PercentAgeTodayExtension */;
+			target = B9B9A95D1AF03315001C248B /* PercentAgeToday */;
 			targetProxy = B9B9A9681AF03315001C248B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -934,8 +958,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PercentAgeTodayExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -944,8 +968,8 @@
 		B9B9A96C1AF03315001C248B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = PercentAgeTodayExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				INFOPLIST_FILE = "$(PRODUCT_NAME)/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -999,7 +1023,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9B9A96D1AF03315001C248B /* Build configuration list for PBXNativeTarget "PercentAgeTodayExtension" */ = {
+		B9B9A96D1AF03315001C248B /* Build configuration list for PBXNativeTarget "PercentAgeToday" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9B9A96B1AF03315001C248B /* Debug */,
