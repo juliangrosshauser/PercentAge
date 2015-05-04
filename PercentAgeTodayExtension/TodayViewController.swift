@@ -12,6 +12,10 @@ import NotificationCenter
 @objc(TodayViewController)
 
 class TodayViewController: UIViewController {
+
+    override func loadView() {
+        view = TodayView()
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()

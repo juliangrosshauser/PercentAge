@@ -23,6 +23,7 @@
 		B92E6E7D1AE060C300CB60A7 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92E6E711AE060C300CB60A7 /* BirthdayView.swift */; };
 		B92E6E7E1AE060C300CB60A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E731AE060C300CB60A7 /* LaunchScreen.xib */; };
 		B92E6E7F1AE060C300CB60A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B92E6E751AE060C300CB60A7 /* Images.xcassets */; };
+		B959982C1AF43A8A00343FE2 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959982B1AF43A8A00343FE2 /* TodayView.swift */; };
 		B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9A95F1AF03315001C248B /* NotificationCenter.framework */; };
 		B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9A9641AF03315001C248B /* TodayViewController.swift */; };
 		B9B9A96A1AF03315001C248B /* PercentAgeTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -116,6 +117,7 @@
 		B92E6E861AE060CB00CB60A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B946B0AA1AB4A01300D0A599 /* PercentAge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PercentAge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B0BF1AB4A01300D0A599 /* PercentAgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PercentAgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B959982B1AF43A8A00343FE2 /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PercentAgeTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B9A95F1AF03315001C248B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		B9B9A9631AF03315001C248B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				B9B9A9641AF03315001C248B /* TodayViewController.swift */,
+				B959982B1AF43A8A00343FE2 /* TodayView.swift */,
 				B9B9A9621AF03315001C248B /* Supporting Files */,
 			);
 			path = PercentAgeTodayExtension;
@@ -661,6 +664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B959982C1AF43A8A00343FE2 /* TodayView.swift in Sources */,
 				B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
