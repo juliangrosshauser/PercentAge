@@ -27,6 +27,7 @@
 		B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9A95F1AF03315001C248B /* NotificationCenter.framework */; };
 		B9B9A9651AF03315001C248B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9A9641AF03315001C248B /* TodayViewController.swift */; };
 		B9B9A96A1AF03315001C248B /* PercentAgeTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B9FD70D41AF8124F00C7D0A8 /* PercentAgeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91340F91AF2D3A2007EE539 /* PercentAgeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FD70D41AF8124F00C7D0A8 /* PercentAgeKit.framework in Frameworks */,
 				B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
