@@ -84,6 +84,8 @@ class AgeViewController: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
         ageLabel.center = view.center
 
         preAgeLabel.center.x = view.center.x - 100
