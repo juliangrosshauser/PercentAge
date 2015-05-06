@@ -28,6 +28,21 @@ class TodayViewController: UIViewController {
         super.viewDidLoad()
 
         preferredContentSize = CGSize(width: 0, height: 50)
+
+        let todayView = view as! TodayView
+
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
+
+        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
+            let age = viewModel.ageInPercent(birthday: birthday, today: NSDate())
+            let ageInPercent = NSString(format: "%.2f", age) as String
+
+            todayView.ageLabel.text = "You are \(ageInPercent) years old"
+        } else {
+            todayView.ageLabel.text = "Open PercentAge to set your birthday"
+        }
+
+        todayView.ageLabel.sizeToFit()
     }
 }
 
