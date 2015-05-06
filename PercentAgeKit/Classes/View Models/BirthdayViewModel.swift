@@ -24,10 +24,10 @@ public class BirthdayViewModel: NSObject {
         let day: Int
         let month: Int
         let year: Int
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
 
-        if let birthday = defaults.objectForKey("birthday") as? NSDate {
+        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
             let birthdayComponents = calendar.components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: birthday)
 
             day = birthdayComponents.day

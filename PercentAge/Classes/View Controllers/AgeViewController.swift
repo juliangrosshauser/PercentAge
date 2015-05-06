@@ -54,9 +54,9 @@ class AgeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
 
-        if let birthday = defaults.objectForKey("birthday") as? NSDate {
+        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
             let age = viewModel.ageInPercent(birthday: birthday, today: NSDate())
 
             ageLabel.text = NSString(format: "%.2f", age) as String
