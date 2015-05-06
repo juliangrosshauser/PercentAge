@@ -24,7 +24,7 @@ public class BirthdayViewModel: NSObject {
         let day: Int
         let month: Int
         let year: Int
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
 
         if let birthday = userDefaults.objectForKey("birthday") as? NSDate {

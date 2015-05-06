@@ -168,7 +168,9 @@ class BirthdayViewController: UIViewController {
 
     @objc
     private func saveBirthday(sender: AnyObject) {
-        viewModel.saveBirthdayIntoUserDefaults(NSUserDefaults.standardUserDefaults())
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
+
+        viewModel.saveBirthdayIntoUserDefaults(userDefaults)
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 

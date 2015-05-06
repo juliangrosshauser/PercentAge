@@ -54,7 +54,7 @@ class AgeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
 
         if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
             let age = viewModel.ageInPercent(birthday: birthday, today: NSDate())
