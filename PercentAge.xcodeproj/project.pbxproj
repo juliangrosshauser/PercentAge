@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074BDBCE05D81F79910B0554 /* Pods_PercentAgeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19EAD08F3BAF8B1B6070A5E /* Pods_PercentAgeTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7FA2B97048F3E5A6E6D94EDF /* Pods_PercentAgeKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19B6AABA10544C210485A13 /* Pods_PercentAgeKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B902E95B1AF2D59500A7D9E4 /* AgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B902E9591AF2D59500A7D9E4 /* AgeViewModel.swift */; };
 		B902E95C1AF2D59500A7D9E4 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B902E95A1AF2D59500A7D9E4 /* BirthdayViewModel.swift */; };
@@ -158,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074BDBCE05D81F79910B0554 /* Pods_PercentAgeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,9 +485,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B946B0CC1AB4A01300D0A599 /* Build configuration list for PBXNativeTarget "PercentAgeTests" */;
 			buildPhases = (
+				D2483EE6215CA7C92B414976 /* Check Pods Manifest.lock */,
 				B946B0BB1AB4A01300D0A599 /* Sources */,
 				B946B0BC1AB4A01300D0A599 /* Frameworks */,
 				B946B0BD1AB4A01300D0A599 /* Resources */,
+				FB6D2CFE340B6AA4E1C6D6E6 /* Embed Pods Frameworks */,
+				52278AB79E0FBC9858C546A4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -617,6 +622,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		52278AB79E0FBC9858C546A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6372E7D352D46073DD134741 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -660,6 +680,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2483EE6215CA7C92B414976 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6D2CFE340B6AA4E1C6D6E6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PercentAgeTests/Pods-PercentAgeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -944,6 +994,7 @@
 		};
 		B946B0CD1AB4A01300D0A599 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D4E98F5A192878B62093E1 /* Pods-PercentAgeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -963,6 +1014,7 @@
 		};
 		B946B0CE1AB4A01300D0A599 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 896E3D5775E4B2BE7DD733A9 /* Pods-PercentAgeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
