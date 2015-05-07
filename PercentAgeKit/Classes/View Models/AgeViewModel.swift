@@ -10,10 +10,23 @@ import Foundation
 
 public class AgeViewModel {
 
+    //MARK: Properties
+
+    private(set) public var age: String?
+
     //MARK: Initialization
 
-    // tests need a public init method to create AgeViewModel objects
-    public init() { }
+    public init() {
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
+        
+        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
+            let age = ageInPercent(birthday: birthday, today: NSDate())
+
+            self.age = NSString(format: "%.2f", age) as String
+        } else {
+            age = nil
+        }
+    }
 
     //MARK: Date Calculations
 
