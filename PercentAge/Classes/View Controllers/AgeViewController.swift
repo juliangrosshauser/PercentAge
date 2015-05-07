@@ -54,15 +54,7 @@ class AgeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
-
-        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
-            let age = viewModel.ageInPercent(birthday: birthday, today: NSDate())
-
-            ageLabel.text = NSString(format: "%.2f", age) as String
-
-            ageLabel.sizeToFit()
-        } else {
+        if viewModel.age == nil {
             presentViewController(BirthdayViewController(), animated: false, completion: nil)
         }
     }
@@ -72,6 +64,11 @@ class AgeViewController: UIViewController {
 
         let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
         navigationItem.leftBarButtonItem = calendarButton
+
+        if let age = viewModel.age {
+            ageLabel.text = age
+            ageLabel.sizeToFit()
+        }
 
         view.addSubview(ageLabel)
         view.addSubview(preAgeLabel)
