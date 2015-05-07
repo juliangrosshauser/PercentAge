@@ -49,6 +49,43 @@ class AgeViewController: UIViewController {
         return label
     }()
 
+    //MARK: Initialization
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        viewModel.addObserver(self, forKeyPath: "age", options: .New, context: &AgeViewModel.observeContext)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    //MARK: Deinitialization
+
+    deinit {
+        viewModel.removeObserver(self, forKeyPath: "age", context: &AgeViewModel.observeContext)
+    }
+
+    //MARK: Key-Value Observing
+
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        if (context == &AgeViewModel.observeContext) {
+            if let newValue = change[NSKeyValueChangeNewKey] as? String {
+                if keyPath == "age" {
+                    ageLabel.text = newValue
+                    ageLabel.sizeToFit()
+                } else {
+                    super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+                }
+            } else {
+                super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+            }
+        } else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        }
+    }
+
     //MARK: UIViewController
 
     override func viewDidAppear(animated: Bool) {

@@ -8,15 +8,19 @@
 
 import Foundation
 
-public class AgeViewModel {
+public class AgeViewModel: NSObject {
 
     //MARK: Properties
 
-    private(set) public var age: String?
+    static public var observeContext = 1
+
+    dynamic private(set) public var age: String?
 
     //MARK: Initialization
 
-    public init() {
+    public override init() {
+        super.init()
+
         setAge()
 
         let notificationCenter = NSNotificationCenter.defaultCenter()
