@@ -17,15 +17,17 @@ public class AgeViewModel {
     //MARK: Initialization
 
     public init() {
-        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
-        
-        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
-            let age = ageInPercent(birthday: birthday, today: NSDate())
+        setAge()
 
-            self.age = NSString(format: "%.2f", age) as String
-        } else {
-            age = nil
-        }
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: "setAge", name: NSUserDefaultsDidChangeNotification, object: nil)
+    }
+
+    //MARK: Deinitialization
+
+     deinit {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self)
     }
 
     //MARK: Date Calculations
@@ -94,5 +96,20 @@ public class AgeViewModel {
         let dayDifference = calendar!.components(.CalendarUnitDay, fromDate: before, toDate: after, options: .allZeros)
         
         return dayDifference.day
+    }
+
+    //MARK: Notification Observers
+
+    @objc
+    private func setAge() {
+        let userDefaults = NSUserDefaults(suiteName: "group.com.juliangrosshauser.PercentAge")!
+
+        if let birthday = userDefaults.objectForKey("birthday") as? NSDate {
+            let age = ageInPercent(birthday: birthday, today: NSDate())
+
+            self.age = NSString(format: "%.2f", age) as String
+        } else {
+            age = nil
+        }
     }
 }
