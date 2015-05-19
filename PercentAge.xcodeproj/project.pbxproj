@@ -26,6 +26,8 @@
 		B9B0AFCB1AF819B40058A64E /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B0AFC71AF819B40058A64E /* TodayView.swift */; };
 		B9B9A9601AF03315001C248B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9A95F1AF03315001C248B /* NotificationCenter.framework */; };
 		B9B9A96A1AF03315001C248B /* PercentAgeToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B9C7717D1B0BCD3E00063632 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C7717C1B0BCD3E00063632 /* Quick.framework */; };
+		B9C7717F1B0BCD4200063632 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C7717E1B0BCD4200063632 /* Nimble.framework */; };
 		B9FD70D41AF8124F00C7D0A8 /* PercentAgeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91340F91AF2D3A2007EE539 /* PercentAgeKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		B9B0AFC91AF819B40058A64E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B9A95E1AF03315001C248B /* PercentAgeToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PercentAgeToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B9A95F1AF03315001C248B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B9C7717C1B0BCD3E00063632 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		B9C7717E1B0BCD4200063632 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		B9CC8C441AF9473A00FCF7CC /* PercentAge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PercentAge.entitlements; sourceTree = "<group>"; };
 		B9CC8C451AF9476C00FCF7CC /* PercentAgeToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PercentAgeToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B91341041AF2D3A2007EE539 /* PercentAgeKit.framework in Frameworks */,
+				B9C7717D1B0BCD3E00063632 /* Quick.framework in Frameworks */,
+				B9C7717F1B0BCD4200063632 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				B9B9A95F1AF03315001C248B /* NotificationCenter.framework */,
+				B9C7717C1B0BCD3E00063632 /* Quick.framework */,
+				B9C7717E1B0BCD4200063632 /* Nimble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -730,6 +738,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -748,6 +757,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/$(PRODUCT_NAME)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
