@@ -1,6 +1,6 @@
 [
-  "-workspace", "Age.xcworkspace",
-  "-scheme", "Age",
+  "-project", "PercentAge.xcodeproj",
+  "-scheme", "PercentAge",
   "-configuration", "Debug",
   "-sdk", "iphonesimulator",
   "-arch", "i386"
