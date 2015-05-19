@@ -3,6 +3,5 @@ xcode_project: PercentAge.xcodeproj
 xcode_scheme: PercentAge
 xcode_sdk: iphonesimulator8.1
 before_install:
-  - gem update
   - brew update
   - brew upgrade
