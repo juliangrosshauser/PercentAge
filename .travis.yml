@@ -4,4 +4,4 @@ xcode_scheme: PercentAge
 xcode_sdk: iphonesimulator8.1
 before_install:
   - brew update
-  - brew upgrade
+  - brew upgrade --all
