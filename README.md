@@ -6,5 +6,11 @@
 PercentAge shows you your age in percent.  
 You can also check your age in the notification center.
 
+Build dependencies via [Carthage](https://github.com/Carthage/Carthage) first:
+
+``` shell
+$ carthage bootstrap
+```
+
 ## License
 [MIT](LICENSE)
