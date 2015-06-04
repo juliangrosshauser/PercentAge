@@ -6,3 +6,4 @@ before_install:
   - brew update
   - brew upgrade --all
   - brew install carthage
+install: carthage bootstrap
