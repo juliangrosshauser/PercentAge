@@ -1,7 +1,8 @@
 language: objective-c
+osx_image: beta-xcode6.3
 xcode_project: PercentAge.xcodeproj
 xcode_scheme: PercentAge
-xcode_sdk: iphonesimulator8.1
+xcode_sdk: iphonesimulator8.3
 before_install:
   - brew update
   - brew upgrade --all
