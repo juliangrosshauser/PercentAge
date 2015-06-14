@@ -99,7 +99,7 @@ class AgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let calendarButton = UIBarButtonItem(image: UIImage(named: "Calendar"), style: .Plain, target: self, action: "showBirthdaySettings:")
+        let calendarButton = UIBarButtonItem(title: "Calendar", style: .Plain, target: self, action: "showBirthdaySettings:")
         navigationItem.leftBarButtonItem = calendarButton
 
         if let age = viewModel.age {
